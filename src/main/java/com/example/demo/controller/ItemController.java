@@ -45,7 +45,7 @@ public class ItemController {
         item.setLoanCount(3);
         item.setRating(ItemRating.FIVE);
         item.setDescription("테스트입니다.");
-        item.set
+//        item.set
 
 
         itemService.saveItem(item);
