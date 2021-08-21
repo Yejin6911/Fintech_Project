@@ -1,4 +1,4 @@
-package com.example.demo.domain;
+package com.example.demo.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;

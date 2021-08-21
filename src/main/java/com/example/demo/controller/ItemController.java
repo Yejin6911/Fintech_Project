@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.item.Item;
+import com.example.demo.domain.entity.Item;
 import com.example.demo.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

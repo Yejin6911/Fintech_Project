@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.domain.OrderStatus;
+import com.example.demo.domain.entity.OrderStatus;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,4 +1,4 @@
-package com.example.demo.domain.item;
+package com.example.demo.domain.entity;
 
 import com.example.demo.exception.NotEnoughStockException;
 import lombok.Getter;
