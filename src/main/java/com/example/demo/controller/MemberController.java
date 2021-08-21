@@ -6,11 +6,17 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
 @Controller
 @AllArgsConstructor
 public class MemberController {
 
     private final MemberService memberService;
+
+    @GetMapping("/")
+    public String displogin(){
+        return "member/signin";
+    }
 
     @GetMapping("/user/signup")
     public String dispSignup(){
@@ -20,23 +26,17 @@ public class MemberController {
     @PostMapping("/user/signup")
     public String execSignup(MemberDto memberDto){
         memberService.joinUser(memberDto);
-        return "redirect:/user/login";
+        return "member/thankyou2";
     }
 
-    @GetMapping("/user/login")
-    public String displogin(){
-        return "member/login";
-    }
-
-    @GetMapping("/user/login/result")
-    public String dispLoginResult(){
-        return "member/loginSuccess";
+    @GetMapping("/user/signup/result")
+    public String dispSignupResult(){
+        return "member/signinSuccess";
     }
 
     @GetMapping("/user/logout/result")
     public String dispLogoutResult(){
         return "member/logoutSuccess";
     }
-
 
 }

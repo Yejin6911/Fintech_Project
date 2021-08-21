@@ -15,7 +15,6 @@ public class MemberDto {
     private String password;
     private String name;
     private String birthday;
-    private String phoneNumber;
 
 
     public MemberEntity toEntity(){
@@ -25,7 +24,6 @@ public class MemberDto {
                 .password(password)
                 .name(name)
                 .birthday(birthday)
-                .phoneNumber(phoneNumber)
                 .build();
     }
 
@@ -36,6 +34,5 @@ public class MemberDto {
         this.password = password;
         this.name = name;
         this.birthday = birthday;
-        this.phoneNumber = phoneNumber;
     }
 }

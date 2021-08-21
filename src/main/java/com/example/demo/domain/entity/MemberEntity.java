@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-@Table(name = "MEMBERS")
+@Table(name = "akaka")
 public class MemberEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -28,8 +28,6 @@ public class MemberEntity {
     @Column(length = 20, nullable = false)
     private String birthday;
 
-    @Column(length = 30, nullable = false)
-    private String phoneNumber;
 
     @Builder
     public MemberEntity(Long id, String name, String email, String password, String birthday, String phoneNumber){
@@ -38,7 +36,6 @@ public class MemberEntity {
         this.email = email;
         this.password = password;
         this.birthday = birthday;
-        this.phoneNumber = phoneNumber;
     }
 
 }
