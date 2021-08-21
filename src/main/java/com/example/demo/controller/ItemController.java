@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.domain.entity.Item;
+import com.example.demo.domain.entity.ItemRating;
 import com.example.demo.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -38,9 +39,10 @@ public class ItemController {
         item.setPrice(10000);
         item.setStockQuantity(10);
         item.setLoanCount(3);
+        item.setRating(ItemRating.FIVE);
+        item.setDescription("테스트입니다.");
 
         itemService.saveItem(item);
-//        return "redirect:/";
     }
 
 //    @GetMapping("/items/new")

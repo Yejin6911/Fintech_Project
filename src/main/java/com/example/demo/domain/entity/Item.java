@@ -4,9 +4,7 @@ import com.example.demo.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Getter @Setter
@@ -21,9 +19,14 @@ public class Item {
 
     private int stockQuantity;
 
-
     // 해당 상품의 정해진 할부 개월수
     private int loanCount;
+
+    @Enumerated(EnumType.ORDINAL)
+    private ItemRating rating;
+
+    @Lob
+    private String description;
 
 
     //==비즈니스 로직==//
