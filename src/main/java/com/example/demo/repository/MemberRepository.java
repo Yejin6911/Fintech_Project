@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.domain.entity.Member;
+import com.example.demo.domain.entity.MemberEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -13,21 +13,22 @@ public class MemberRepository {
 
     private final EntityManager em;
 
-    public void save(Member member) {
+    public MemberEntity save(MemberEntity member) {
         em.persist(member);
+        return member;
     }
 
-    public Member findOne(Long id) {
-        return em.find(Member.class, id);
+    public MemberEntity findOne(Long id) {
+        return em.find(MemberEntity.class, id);
     }
 
-    public List<Member> findAll() {
-        return em.createQuery("select m from Member m", Member.class)
+    public List<MemberEntity> findAll() {
+        return em.createQuery("select m from MemberEntity m", MemberEntity.class)
                 .getResultList();
     }
 
-    public List<Member> findByName(String name) {
-        return em.createQuery("select m from Member m where m.name = :name", Member.class)
+    public List<MemberEntity> findByName(String name) {
+        return em.createQuery("select m from MemberEntity m where m.name = :name", MemberEntity.class)
                 .setParameter("name", name)
                 .getResultList();
     }

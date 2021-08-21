@@ -25,7 +25,7 @@ public class Order {
 
     @ManyToOne(fetch = LAZY)
     @JoinColumn(name = "member_id")
-    private Member member;
+    private MemberEntity member;
 
     @JsonIgnore
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
@@ -37,7 +37,7 @@ public class Order {
     private OrderStatus status; //주문상태 [ORDER, CANCEL]
 
     //==연관관계 메서드==//
-    public void setMember(Member member) {
+    public void setMember(MemberEntity member) {
         this.member = member;
         member.getOrders().add(this);
     }
@@ -49,7 +49,7 @@ public class Order {
 
 
     //==생성 메서드==//
-    public static Order createOrder(Member member, OrderItem... orderItems) {
+    public static Order createOrder(MemberEntity member, OrderItem... orderItems) {
         Order order = new Order();
         order.setMember(member);
 //        order.setDelivery(delivery);
