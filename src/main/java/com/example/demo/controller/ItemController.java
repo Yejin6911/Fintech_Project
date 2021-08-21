@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.domain.entity.MemberEntity;
 import com.example.demo.domain.entity.item.Item;
 import com.example.demo.domain.entity.item.ItemRating;
 import com.example.demo.service.ItemService;
@@ -37,6 +38,10 @@ public class ItemController {
 
     @PostConstruct
     public void create() {
+
+//        MemberEntity member1 = new MemberEntity();
+//        member1.
+
 
         Item item = new Item();
         item.setName("test");

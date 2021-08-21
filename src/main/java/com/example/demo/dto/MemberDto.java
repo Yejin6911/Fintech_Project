@@ -3,6 +3,7 @@ package com.example.demo.dto;
 import com.example.demo.domain.entity.MemberEntity;
 import lombok.*;
 
+import javax.persistence.Entity;
 import java.time.LocalDateTime;
 
 @Getter

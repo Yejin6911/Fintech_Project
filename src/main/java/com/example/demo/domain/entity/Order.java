@@ -24,10 +24,10 @@ public class Order {
     private Long id;
 
     @ManyToOne(fetch = LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "member_id")
     private MemberEntity member;
 
-    @JsonIgnore
+//    @JsonIgnore
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> orderItems = new ArrayList<>();
 
@@ -52,10 +52,11 @@ public class Order {
     public static Order createOrder(MemberEntity member, OrderItem... orderItems) {
         Order order = new Order();
         order.setMember(member);
-//        order.setDelivery(delivery);
+
         for (OrderItem orderItem : orderItems) {
             order.addOrderItem(orderItem);
         }
+
         order.setStatus(OrderStatus.ORDER);
         order.setOrderDate(LocalDateTime.now());
         return order;
