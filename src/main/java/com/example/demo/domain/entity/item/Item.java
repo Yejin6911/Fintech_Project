@@ -1,4 +1,4 @@
-package com.example.demo.domain.entity;
+package com.example.demo.domain.entity.item;
 
 import com.example.demo.exception.NotEnoughStockException;
 import lombok.Getter;
@@ -30,6 +30,15 @@ public class Item {
 
     @Lob
     private String description;
+
+
+    @ManyToOne
+    @JoinColumn(name = "seller_id")
+    private Seller seller;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
 
     //==비즈니스 로직==//

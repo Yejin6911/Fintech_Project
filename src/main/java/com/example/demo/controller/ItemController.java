@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.entity.Item;
-import com.example.demo.domain.entity.ItemRating;
+import com.example.demo.domain.entity.item.Item;
+import com.example.demo.domain.entity.item.ItemRating;
 import com.example.demo.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -38,13 +38,6 @@ public class ItemController {
     @PostConstruct
     public void create() {
 
-//        Book book = new Book();
-//        book.setName(form.getName());
-//        book.setPrice(form.getPrice());
-//        book.setStockQuantity(form.getStockQuantity());
-//        book.setAuthor(form.getAuthor());
-//        book.setIsbn(form.getIsbn());
-
         Item item = new Item();
         item.setName("test");
         item.setPrice(10000);
@@ -52,6 +45,8 @@ public class ItemController {
         item.setLoanCount(3);
         item.setRating(ItemRating.FIVE);
         item.setDescription("테스트입니다.");
+        item.set
+
 
         itemService.saveItem(item);
 

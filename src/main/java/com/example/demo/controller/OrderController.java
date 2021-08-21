@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.entity.Item;
+import com.example.demo.domain.entity.item.Item;
 import com.example.demo.domain.entity.MemberEntity;
 import com.example.demo.domain.entity.Order;
 import com.example.demo.repository.OrderSearch;

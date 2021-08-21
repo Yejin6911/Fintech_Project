@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.domain.entity.Item;
+import com.example.demo.domain.entity.item.Item;
 import com.example.demo.domain.entity.MemberEntity;
 import com.example.demo.domain.entity.Order;
 import com.example.demo.domain.entity.OrderItem;
@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional(readOnly = true)
