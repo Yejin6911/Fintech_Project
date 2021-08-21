@@ -29,6 +29,12 @@
             <td th:text="${item.rating}"></td>
             <td th:text="${item.description}"></td>
             <td>
+                <a href="#" th:href="@{/items/{id}/edit (id=${item.id})}" class="btn btn-primary" role="button">장바구니</a>
+            </td>
+            <td>
+                <a href="#" th:href="@{/items/{id}/edit (id=${item.id})}" class="btn btn-primary" role="button">주문하기</a>
+            </td>
+            <td>
                 <a href="#" th:href="@{/items/{id}/edit (id=${item.id})}" class="btn btn-primary" role="button">수정</a>
             </td>
             </tbody>
