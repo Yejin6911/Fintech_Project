@@ -19,6 +19,9 @@ public class Item {
 
     private int stockQuantity;
 
+    // 판매자 계좌번호
+    private String sellerAccount;
+
     // 해당 상품의 정해진 할부 개월수
     private int loanCount;
 

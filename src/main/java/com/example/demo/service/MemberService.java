@@ -25,7 +25,7 @@ import java.util.Optional;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class MemberService {
+public class MemberService implements UserDetailsService {
 
     private final MemberRepository memberRepository;
 
@@ -34,6 +34,21 @@ public class MemberService {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         memberDto.setPassword(passwordEncoder.encode(memberDto.getPassword()));
         return memberRepository.save(memberDto.toEntity()).getId();
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        Optional<MemberEntity> userEntityWrapper = memberRepository.findByEmail(email);
+        MemberEntity userEntity = userEntityWrapper.get();
+
+        List<GrantedAuthority> authorities = new ArrayList<>();
+
+        if(("admin@example.com").equals(email)){
+            authorities.add(new SimpleGrantedAuthority(Role.ADMIN.getValue()));
+        }else{
+            authorities.add(new SimpleGrantedAuthority(Role.MEMBER.getValue()));
+        }
+        return new User(userEntity.getEmail(),userEntity.getPassword(),authorities);
     }
 
 

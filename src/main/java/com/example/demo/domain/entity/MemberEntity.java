@@ -3,6 +3,8 @@ package com.example.demo.domain.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
@@ -27,6 +29,9 @@ public class MemberEntity {
 
     @Column(length = 30, nullable = false)
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "member")
+    private List<Order> orders = new ArrayList<>();
 
     @Builder
     public MemberEntity(Long id, String name, String email, String password, String birthday, String phoneNumber){
