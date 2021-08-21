@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import com.example.demo.domain.entity.Order;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 

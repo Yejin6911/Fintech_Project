@@ -5,6 +5,7 @@ import com.example.demo.domain.entity.Role;
 import com.example.demo.dto.MemberDto;
 import com.example.demo.repository.MemberRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -15,16 +16,18 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 
 @Service
-@AllArgsConstructor
+@Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class MemberService {
 
-    private MemberRepository memberRepository;
+    private final MemberRepository memberRepository;
 
     @Transactional
     public Long joinUser(MemberDto memberDto){
@@ -33,6 +36,10 @@ public class MemberService {
         return memberRepository.save(memberDto.toEntity()).getId();
     }
 
+
+    public List<MemberEntity> findMembers() {
+        return memberRepository.findAll();
+    }
 //    @Override
 //    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 //        Optional<MemberEntity> userEntityWrapper = memberRepository.findByEmail(email);
