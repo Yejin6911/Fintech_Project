@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll1</title>
+    <style>
+        html, body{
+        margin: 0;
+        padding: 0;
+        }
+
+        button{
+            font-size: medium;
+            border: none;
+            color: #00b8d9;
+            background-color: rgb(243, 245, 249);
+            font-weight: bold;
+        }
+
+        /* header */
+        header{
+            padding: 5px;
+            text-align: center;
+            background-color: rgb(243, 245, 249);
+            padding: 15px;
+        }
+        header > a{
+            color: rgb(29, 172, 167);
+            font-size: medium;
+            font-weight: bold;
+        }
+        header > button{
+            font-size:smaller;
+            float:right;
+            border: none;
+            background-color: rgb(243, 245, 249);
+            color: black;
+        }
+        header > button:hover{
+            color: rgb(29, 172, 167);
+        }
+        header > hr{
+            border-style: solid; 
+            border-width: 1px 0 0 0;
+            border-color: rgb(151, 139, 139);
+        }
+
+        /* section */
+        section{
+            padding-top: 30px;
+            text-align: center;
+            background-color: rgb(243, 245, 249);
+            height: 535px;
+            color: rgb(151, 139, 139);
+            font-size: smaller;
+        }
+        section > a > button{
+            font-size:large;
+            border: none;
+            background-color: white;
+            color: rgb(151, 139, 139);
+            border : 1px solid black;
+            font-weight: bold;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border : 1px solid rgb(151, 139, 139);
+        }
+        section > a > button:hover{
+            color: rgb(29, 172, 167);
+            border-color: rgb(29, 172, 167);
+        }
+        section > table{
+            font-size: 0;
+            line-height: 0;
+            padding-bottom: 20px;
+        }
+        section > a{
+            color: black;
+            font-size:medium;
+            font-weight: bold;
+        }
+        section > div > label{
+            float:left;
+            color: black;
+            font-size:medium;
+            font-weight: bold;
+        }
+        section > div{
+            float: center;
+            margin-left: 30px;
+        }
+        section > div > input{
+            border: none;
+        }
+        section > div > hr{
+            background-color: gray;
+            height: 0.1px;
+        }
+        section > button{
+            border : 1px solid rgb(151, 139, 139);
+            border-radius: 15px; 
+            width:300px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: rgb(151, 139, 139);
+            margin-bottom: 10px;
+            margin-top: 30px;
+            box-shadow: 3px 3px 3px 3px rgb(240, 236, 236);
+            
+        }
+        section > button:hover{
+            color: rgb(29, 172, 167);
+        }
+        section > input{
+            float: left;
+            margin-left: 70px;
+        }
+
+        /* footer */
+        footer{
+            /* padding-bottom: 10px; */
+            text-align: center;
+            background-color: rgb(243, 245, 249);
+            position: fixed;
+            bottom: 0;
+            
+        }
+        footer > button{
+            background-color: rgb(29, 172, 167);
+            color: white;
+            font-size:medium;
+            font-weight: bold;
+            width: 375px;
+            padding: 10px;
+        }
+
+
+        /* iframe */
+        button > div{
+            font-size:smaller;
+            border: none;
+            background-color: rgb(151, 139, 139);
+            color: #00b8d9;
+        }
+        section > div{
+            text-align: center;
+        }
+        section > div > a{
+            color: black;
+            font-size:large;
+            font-weight: bold;
+        }
+        section > div > div > label{
+            float:left;
+            color: rgb(151, 139, 139);
+            font-size:small;
+            font-weight: bold;
+        }
+        section > div > div{
+            float:left;
+            margin-left: 30px;
+        }
+        section > div > div > input{
+            border: none;
+            background-color: rgb(243, 245, 249);
+        }
+        section > div > div > hr{
+            border-style: solid; 
+            border-width: 1px 0 0 0;
+            border-color: rgb(151, 139, 139);
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <a>결제수단 등록</a>
+        <button>X</button>
+        <hr>
+    </header>
+
+    <!-- section -->
+    <section>
+        <table>
+            <!-- <a href='checkcard.html' target='myi'><button>체크카드</button></a>
+            <a href='account.html' target='myi'><button>계좌</button></a> -->
+            <a><button style="color: rgb(29, 172, 167); border-color: rgb(29, 172, 167);">체크카드</button></a>
+            <a th:href='@{/user/register/account}' target='myi'><button>계좌</button></a>
+        </table>
+
+        <!-- <iframe name='myi' width='300' height="280" frameborder='0'> -->
+        
+        <div>
+            <a>카드 정보를 입력해주세요.</a></br></br>
+
+            <img src='/assets/img/card.png' width='80'></br></br>
+            
+            <div>
+                <label for='card'>카드번호</label></br>
+                    <input id='card' type='card' name='mycard' pattern="\d{4}-\d{4}-\d{4}-\d{4}" placeholder='1234-5678-1234-5678'><br>
+                <hr>           
+                <label for='card'>cvc</label></br>
+                    <input id='cvc' type='cvc' name='mycvc' pattern="\d{3}" placeholder='***'><br>
+                <hr>
+            </div>
+        </div>
+
+        <!-- </iframe> -->
+
+        <button><input type='checkbox'>전체 동의</input></button>
+
+        <br>전자거래 이용약관 동의(필수)
+        <br>개인정보 수집 및 이용동의(필수)
+        <br>개인정보 제공 및 위탁 동의(필수)
+
+        <!-- <br><input type='checkbox'>전자거래 이용약관 동의(필수)</input>
+        <input type='checkbox'>개인정보 수집 및 이용동의(필수)</input>
+        <input type='checkbox'>개인정보 제공 및 위탁 동의(필수)</input> -->
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <button>다음</button>
+    </footer>
+</body>
+</html>

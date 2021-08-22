@@ -31,3 +31,10 @@ public class AccountService {
         return accountApiClient.drawingTransfer(param, FinAcno);
     }
 }
+
+/**
+    @Transactional
+    public Long setAccountInfo(AccountDto accountDto){
+        return accountRepository.save(accountDto.toEntity()).getId();
+    }
+    **/
