@@ -374,21 +374,6 @@
                 }).fail(function (error) {
                     alert(JSON.stringify(error));
                 });
-            },
-
-            inquire : function () {
-                var FinAcno = $('#Acno').val();
-                var data = {"FinAcno": FinAcno };
-                $.ajax({
-                    type: 'POST',
-                    url: '/api/account/balance',
-                    contentType:'application/json',
-                    data: JSON.stringify(data),
-                }).done(function(res) {
-                    alert('이거야'+JSON.stringify(data));
-                }).fail(function (error) {
-                    alert(JSON.stringify(error));
-                });
             }
         };
 

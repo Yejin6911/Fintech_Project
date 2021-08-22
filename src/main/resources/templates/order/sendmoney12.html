@@ -366,11 +366,26 @@
             var _this = this;
             $('#3times').on('click', function () {
                 location.href = '/order/3times';
-                alert("clicked");
             });
             $('#purchase_btn').on('click', function(){
-                location.href = '/order/success'
+                _this.order();
             })
+        },
+        order : function () {
+            var Acno = $('#Acno').val();
+            // var price = $('#price').val();
+            var data = { Tram: "5000", "Acno":"3020000004719" };
+            $.ajax({
+                type: 'POST',
+                url: '/api/account/order',
+                contentType:'application/json',
+                data: JSON.stringify(data),
+            }).done(function(res) {
+                console.log(JSON.stringify(res));
+                location.href = '/order/success'
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
         }
     };
     main.init();

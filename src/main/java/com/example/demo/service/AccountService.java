@@ -49,7 +49,8 @@ public class AccountService {
 
     @Transactional(readOnly = true)
     public String order(Map<String, String> param) {
-        String FinAcno = "00820100010630000000000011386";
+        Account account = accountRepository.findByAcno(param.get("Acno"));
+        String FinAcno = account.getFinAcno();
         return accountApiClient.drawingTransfer(param, FinAcno);
     }
 

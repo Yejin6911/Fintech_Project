@@ -140,7 +140,7 @@
                     <input type="text" class="trasparent-input text-center" value="150,000" placeholder="Enter Amount" style="font-family: S-CoreDream-7ExtraBold">
                     <div class="text-center"><span class="text-muted" style="font-family: S-CoreDream-5Medium;">분할 납부 횟수</span>
                         <button class="btn btn-link btn-sm text-muted px-1 dropdown-toggle" type="button" id="ln1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                            data-bs-toggle="dropdown" aria-expanded="true">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end shadow border-0 w-110" aria-labelledby="ln1">
                             <li><button type= "button" class="dropdown-item active"  style='font-family: S-CoreDream-4Regular;'>1번</button></li>
@@ -364,8 +364,25 @@
                 location.href = '/order/12times'
             });
             $('#purchase_btn').on('click', function(){
-                location.href = '/order/success'
+                _this.order();
             })
+        },
+
+        order : function () {
+            var Acno = $('#Acno').val();
+            // var price = $('#price').val();
+            var data = { Tram: "130000", "Acno":"3020000004719" };
+            $.ajax({
+                type: 'POST',
+                url: '/api/account/order',
+                contentType:'application/json',
+                data: JSON.stringify(data),
+            }).done(function(res) {
+                console.log(JSON.stringify(res));
+                location.href = '/order/success'
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
         }
     }
     main.init();
