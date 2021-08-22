@@ -11303,7 +11303,7 @@ main {
 
 .dark-bg {
   background-color: var(--fimobile-theme-color);
-  background-image: url("../img/backgorund-image.svg");
+  background-image: url("../../../../../../../../HTML/assets/img/backgorund-image.svg");
   background-repeat: repeat-x;
   background-position: bottom center !important;
   animation: zoombg infinite 10s;
@@ -13927,8 +13927,13 @@ input[type=checkbox] + label {
   cursor: pointer; 
   padding-left: 20px; 
   background-repeat: no-repeat;
-  background-image: url('../img/checker-off.svg');
+  background-image: url('../../../../../../../../HTML/assets/img/checker-off.svg');
 }
 input[type=checkbox]:checked + label {
-  background-image: url('../img/checker-on.svg');
+  background-image: url('../../../../../../../../HTML/assets/img/checker-on.svg');
+}
+
+.calendar_container{
+  max-width:1000px;
+  margin: 0 auto;
 }

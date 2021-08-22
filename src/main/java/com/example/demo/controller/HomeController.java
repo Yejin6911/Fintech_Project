@@ -13,8 +13,7 @@ public class HomeController {
         return "home/index";
     }
 
-    @GetMapping("/order")
-    public String dispOrder(){return "order/sendmoney4";}
+
 
 
 }
