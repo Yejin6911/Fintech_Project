@@ -37,7 +37,7 @@ public class MemberEntity {
     private List<Bnpl> bnpls = new ArrayList<>();
 
     @Builder
-    public MemberEntity(Long id, String name, String email, String password, String birthday, String phoneNumber){
+    public MemberEntity(Long id, String name, String email, String password, String birthday){
         this.id = id;
         this.name = name;
         this.email = email;

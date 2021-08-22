@@ -22,7 +22,7 @@ public class Account {
     @JoinColumn(name = "member_id")
     private MemberEntity memberEntity;
 
-    @Column(length = 50, nullable = false)
+    @Column(length = 50)
     private String finAcno;
 
     @Builder

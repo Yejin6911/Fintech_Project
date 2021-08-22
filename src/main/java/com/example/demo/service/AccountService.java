@@ -16,8 +16,8 @@ import java.util.Map;
 public class AccountService {
     private final AccountApiClient accountApiClient;
 
-    private MemberRepository memberRepository;
-    private AccountRepository accountRepository;
+    public final MemberRepository memberRepository;
+    public final AccountRepository accountRepository;
 
     public Long saveAccount(String finAcno, String userEmail) {
         MemberEntity memberEntity = memberRepository.findByEmail(userEmail).get();
