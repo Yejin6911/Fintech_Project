@@ -31,7 +31,7 @@ public class Cart {
     private LocalDateTime orderDate; //주문시간
 
     @Enumerated(EnumType.STRING)
-    private CartStatus status; //주문상태 [ORDER, CANCEL]
+    private CartStatus status; // 카드 주문상태 [BEFORE_ORDER, AFTER_ORDER]
 
     //==연관관계 메서드==//
     public void setMember(MemberEntity member) {

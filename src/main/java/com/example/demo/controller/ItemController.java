@@ -1,15 +1,15 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.entity.MemberEntity;
+import com.example.demo.domain.entity.item.Category;
 import com.example.demo.domain.entity.item.Item;
 import com.example.demo.domain.entity.item.ItemRating;
+import com.example.demo.domain.entity.item.Seller;
 import com.example.demo.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -19,20 +19,20 @@ import java.util.List;
 public class ItemController {
 
     private final ItemService itemService;
-
-    @GetMapping("/items")
-    public String list(Model model) {
-        List<Item> items = itemService.findItems();
-        model.addAttribute("items", items);
-        return "items/itemList";
-    }
-
-    @GetMapping("/items/{itemId}")
-    public String details(@PathVariable Long itemId, Model model) {
-        Item item = itemService.findOne(itemId);
-        model.addAttribute("item", item);
-        return "items/itemDetails";
-    }
+//
+//    @GetMapping("/items")
+//    public String list(Model model) {
+//        List<Item> items = itemService.findItems();
+//        model.addAttribute("items", items);
+//        return "items/itemList";
+//    }
+//
+//    @GetMapping("/items/{itemId}")
+//    public String details(@PathVariable Long itemId, Model model) {
+//        Item item = itemService.findOne(itemId);
+//        model.addAttribute("item", item);
+//        return "items/itemDetails";
+//    }
 
     @PostConstruct
     public void create() {
@@ -53,26 +53,34 @@ public class ItemController {
 //                "1234",
 //                "1234");
 
+        Seller seller = new Seller();
+        seller.setFinAccount("1234");
+        seller.setName("sellerName");
 
+
+
+        Category category = new Category();
+        category.setName("activity");
+//
         Item item = new Item();
         item.setName("test");
         item.setPrice(10000);
         item.setLoanCount(3);
         item.setRating(ItemRating.FIVE);
         item.setDescription("테스트입니다.");
-//        item.set
-
+        item.setSeller(seller);
+        item.setCategory(category);
 
         itemService.saveItem(item);
-
-        Item item2 = new Item();
-        item2.setName("test");
-        item2.setPrice(20000);
-        item2.setLoanCount(2);
-        item2.setRating(ItemRating.FIVE);
-        item2.setDescription("테스트입니다2.");
-
-        itemService.saveItem(item2);
+//
+//        Item item2 = new Item();
+//        item2.setName("test");
+//        item2.setPrice(20000);
+//        item2.setLoanCount(2);
+//        item2.setRating(ItemRating.FIVE);
+//        item2.setDescription("테스트입니다2.");
+//
+//        itemService.saveItem(item2);
     }
 
 //    @GetMapping("/items/new")

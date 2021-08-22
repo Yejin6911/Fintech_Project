@@ -1,6 +1,7 @@
 package com.example.demo.domain.entity.item;
 
 import com.example.demo.domain.entity.CartItem;
+import com.example.demo.domain.entity.MemberEntity;
 import com.example.demo.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,9 +18,6 @@ public class Item {
     private String name;
 
     private int price;
-
-    // 판매자 계좌번호
-    private String sellerAccount;
 
     // 해당 상품의 정해진 할부 개월수
     private int loanCount;
@@ -39,4 +37,16 @@ public class Item {
     @JoinColumn(name = "category_id")
     private Category category;
 
+
+
+    //==연관관계 메서드==//
+    public void setSeller(Seller seller) {
+        this.seller = seller;
+        seller.getItems().add(this);
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+        category.getItems().add(this);
+    }
 }
