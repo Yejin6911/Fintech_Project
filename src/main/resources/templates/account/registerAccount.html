@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">`
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <title>FiMobile V2.0 - Mobile HTML template</title>
+
+    <!-- manifest meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/assets/img/favicon180.png" sizes="180x180">
+    <link rel="icon" href="/assets/img/favicon32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/assets/img/favicon16.png" sizes="16x16" type="image/png">
+
+    <!-- Google fonts-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- style css for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet" id="style">
+
+    <style>
+        html, body{
+        margin: 0;
+        padding: 0;
+        }
+
+        button{
+            font-size: medium;
+            border: none;
+            color: #00b8d9;
+            background-color: rgb(243, 245, 249);
+            font-weight: bold;
+        }
+
+        /* header */
+        header{
+            padding: 5px;
+            text-align: center;
+            background-color: rgb(243, 245, 249);
+            padding: 15px;
+        }
+        header > a{
+            color: rgb(29, 172, 167);
+            font-size: medium;
+            font-weight: bold;
+        }
+        header > button{
+            font-size:smaller;
+            float:right;
+            border: none;
+            background-color: rgb(243, 245, 249);
+            color: black;
+        }
+        header > button:hover{
+            color: rgb(29, 172, 167);
+        }
+        header > hr{
+            border-style: solid; 
+            border-width: 1px 0 0 0;
+            border-color: rgb(151, 139, 139);
+        }
+
+        /* section */
+        section{
+            padding-top: 30px;
+            text-align: center;
+            background-color: rgb(243, 245, 249);
+            height: 535px;
+            color: rgb(151, 139, 139);
+            font-size: smaller;
+        }
+        section > a > button{
+            font-size:large;
+            border: none;
+            background-color: white;
+            color: rgb(151, 139, 139);
+            border : 1px solid black;
+            font-weight: bold;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border : 1px solid rgb(151, 139, 139);
+        }
+        section > a > button:hover{
+            color: rgb(29, 172, 167);
+            border-color: rgb(29, 172, 167);
+        }
+        section > table{
+            font-size: 0;
+            line-height: 0;
+            padding-bottom: 20px;
+        }
+        section > a{
+            color: black;
+            font-size:medium;
+            font-weight: bold;
+        }
+        section > div > label{
+            float:left;
+            color: black;
+            font-size:medium;
+            font-weight: bold;
+        }
+        section > div{
+            float:left;
+            margin-left: 30px;
+        }
+        section > div > input{
+            border: none;
+        }
+        section > div > hr{
+            background-color: gray;
+            height: 0.1px;
+        }
+        section > button{
+            border : 1px solid rgb(151, 139, 139);
+            border-radius: 15px; 
+            width:300px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            color: rgb(151, 139, 139);
+            margin-bottom: 10px;
+            box-shadow: 3px 3px 3px 3px rgb(240, 236, 236);
+            font-size: medium;
+        }
+        section > button:hover{
+            color: rgb(29, 172, 167);
+        }
+        section > input{
+            float: left;
+            margin-left: 70px;
+        }
+
+        /* footer */
+        footer{
+            /* padding-bottom: 10px; */
+            text-align: center;
+            background-color: rgb(243, 245, 249);
+            position: fixed;
+            bottom: 0;
+            
+        }
+        footer > button{
+            background-color: rgb(29, 172, 167);
+            color: white;
+            font-size:medium;
+            font-weight: bold;
+            width: 375px;
+            padding: 10px;
+        }
+
+        /* iframe */
+        button{
+            font-size:smaller;
+            border: none;
+            background-color: rgb(243, 245, 249);
+            color: rgb(151, 139, 139);
+        }
+
+        /* section */
+        section > div{
+            text-align: center;
+            /*margin-left: 50px;*/
+            padding-left: 30px;
+            color: black;
+            padding-top: 20px;
+        }
+        section > div > a{
+            padding-top: 30px;
+            padding-left: 30px;
+            color: black;
+            font-size:large;
+            font-weight: bold;
+        }
+        section > div > table{
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 15px;
+            border: 1px solid rgb(151, 139, 139);
+            border-radius: 10px;
+            margin-left: 30px;
+        }
+        section > div > div > label{
+            float:left;
+            color: rgb(151, 139, 139);
+            font-size:small;
+            font-weight: bold;
+        }
+        section > div > div{
+            float:left;
+            margin-left: 30px;
+        }
+        section > div > div > input{
+            border: none;
+            background-color: rgb(243, 245, 249);
+        }
+        section > div > div > hr{
+            border-style: solid; 
+            border-width: 1px 0 0 0;
+            border-color: rgb(151, 139, 139);
+        }
+    </style>
+</head>
+<body class="body-scroll d-flex flex-column h-100">
+
+<!-- loader section -->
+<div class="container-fluid loader-wrap">
+    <div class="row h-100">
+        <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+            <div class="loader-cube-wrap loader-cube-animate mx-auto">
+                <img src="/assets/img/logo.png" alt="Logo">
+            </div>
+            <p class="mt-4" style="font-family: S-CoreDream-4Regular;">화면을 불러오는 중입니다.<br><strong>잠시만 기다려주세요...</strong></p>
+        </div>
+    </div>
+</div>
+<!-- loader section ends -->
+
+    <!-- header -->
+    <header>
+        <a>결제수단 등록</a>
+        <button type="button" onclick="location.href='/home'">X</button>
+        <hr>
+    </header>
+
+    <!-- section -->
+    <section>
+        <table frame="void">
+            <!-- <a href='checkcard.html' target='myi'><button>체크카드</button></a>
+            <a href='account.html' target='myi'><button>계좌</button></a> -->
+            <a th:href='@{/user/register/card}' target='myi'><button>체크카드</button></a>
+            <a><button style="color: rgb(29, 172, 167); border-color: rgb(29, 172, 167);">계좌</button></a>
+        </table>
+
+        <!-- <iframe name='myi' width='300' height="280" frameborder='0'> -->
+        
+        <div>
+            <a>은행을 선택해주세요.</a></br></br>
+
+            <table>
+                <tr>
+                    <td>
+                        <img src='/assets/img/NH.png' width='30'><br>
+                        <button><input id = "Bncd" type="checkbox" value="011">NH농협</input></button>
+                    </td>
+                    <td>
+                        <img src='/assets/img/Kakao.png' width='40'><br>
+                        <button><input type="checkbox" value="카카오페이">카카오페이</input></button>
+                    </td>
+                    <td>
+                        <img src='/assets/img/Shin.png' width='30'><br>
+                        <button><input type="checkbox" value="신한">신한</input></button>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <img src='/assets/img/Kb.png' width='30'><br>
+                        <button><input type="checkbox" value="KB국민">KB국민</input></button>
+                    </td>
+                    <td>
+                        <img src='/assets/img/Hana.png' width='30'><br>
+                        <button><input type="checkbox" value="하나">하나</input></button>
+                    </td>
+                    <td>
+                        <img src='/assets/img/Woori.png' width='30'><br>
+                        <button><input type="checkbox" value="우리">우리</input></button>
+                    </td>
+                </tr>
+            </table>
+        
+            <div>
+                <label for='Acno'>계좌번호</label></br>
+                    <input id='Acno' type='account' name='myaccount'  placeholder='-없이 입력'><br>
+                <hr>
+
+                <label for='BrdtBrno'>생년월일</label></br>
+                    <input id='BrdtBrno' type='birth' name='mybirth' pattern="\d{6}" placeholder='20210823'><br>
+                <hr>
+            </div>
+
+        </div>
+
+        <!-- </iframe> -->
+
+        <button><input type='checkbox'>전체 동의</input></button>
+
+        <br>전자거래 이용약관 동의(필수)
+        <br>개인정보 수집 및 이용동의(필수)
+        <br>개인정보 제공 및 위탁 동의(필수)
+
+        <!-- <br><input type='checkbox'>전자거래 이용약관 동의(필수)</input>
+        <input type='checkbox'>개인정보 수집 및 이용동의(필수)</input>
+        <input type='checkbox'>개인정보 제공 및 위탁 동의(필수)</input> -->
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <button id="fin-register">등록</button>
+    </footer>
+
+    <!-- Required jquery and libraries -->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+
+    <!-- cookie js -->
+    <script src="/assets/js/jquery.cookie.js"></script>
+
+    <!-- Customized jquery file  -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/color-scheme.js"></script>
+
+    <!-- PWA app service registration and works -->
+    <script src="/assets/js/pwa-services.js"></script>
+
+    <!-- page level custom script -->
+    <script src="/assets/js/app.js"></script>
+
+    <!-- 핀어카운트 발급 -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        var main = {
+            init : function () {
+                var _this = this;
+                $('#fin-register').on('click', function () {
+                    _this.register();
+                });
+            },
+
+            register : function () {
+                var BrdtBrno = $('#BrdtBrno').val();
+                var Bncd = $('#Bncd').val();
+                var Acno = $('#Acno').val();
+                var data = {"DrtrRgyn": "Y", "BrdtBrno":BrdtBrno, "Bncd": Bncd, "Acno":Acno };
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/account/register',
+                    contentType:'application/json',
+                    data: JSON.stringify(data),
+                }).done(function(res) {
+                    var result = JSON.parse(res);
+                    var data = {"BrdtBrno":BrdtBrno, "Rgno":result.Rgno, "Acno":Acno};
+                    console.log(data);
+                    $.ajax({
+                        type: 'POST',
+                        url: '/api/account/confirm',
+                        contentType:'application/json',
+                        data: JSON.stringify(data),
+                    }).done(function(res) {
+                        alert(res);
+                        location.href="/home";
+                    }).fail(function (error) {
+                        alert('실패'+JSON.stringify(error));
+                    });
+                }).fail(function (error) {
+                    alert(JSON.stringify(error));
+                });
+            }
+        };
+
+        main.init();
+    </script>
+</body>
+</html>

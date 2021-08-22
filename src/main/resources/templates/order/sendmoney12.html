@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <title>FiMobile V2.0 - Mobile HTML template</title>
+
+    <!-- manifest meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/assets/img/favicon180.png" sizes="180x180">
+    <link rel="icon" href="/assets/img/favicon32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/assets/img/favicon16.png" sizes="16x16" type="image/png">
+
+    <!-- Calendar -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- checkbox -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <!-- swiper carousel css -->
+    <link rel="stylesheet" href="/assets/vendor/swiperjs-6.6.2/swiper-bundle.min.css">
+
+    <!-- style css for this template -->
+    <link href="/assets/css/style.css" rel="stylesheet" id="style">
+
+</head>
+
+<body class="body-scroll" data-page="sendmoney1">
+
+<script type="text/javascript" src="/assets/js/custom.js"></script>
+
+    <!-- loader section -->
+    <div class="container-fluid loader-wrap">
+        <div class="row h-100">
+            <div class="col-10 col-md-6 col-lg-5 col-xl-3 mx-auto text-center align-self-center">
+                <div class="loader-cube-wrap loader-cube-animate mx-auto">
+                    <img src="/assets/img/logo.png" alt="Logo">
+                </div>
+                <p class="mt-4" style="font-family: S-CoreDream-4Regular;">화면을 불러오는 중입니다.<br><strong>잠시만 기다려주세요...</strong></p>
+            </div>
+        </div>
+    </div>
+    <!-- loader section ends -->
+
+    <!-- Begin page -->
+    <main class="h-100">
+
+        <!-- Header -->
+        <header class="header position-fixed ">
+            <div class="row col align-self-center text-center">
+                <div>
+                    <button class="btn btn-light btn-44 back-btn" onclick="window.location.replace('bills.html');" style="float: left;">
+                        <i class="bi bi-arrow-left"></i>
+                    </button>
+                    <span style="float: right;">
+                        <span href="/notifications.html" target="_self" class="btn btn-light btn-44">
+                            <i class="bi bi-bell"></i>
+                            <span class="count-indicator"></span>
+                        </span>
+                    </span>
+                </div>
+                <div>
+                    <h5 style="font-family: S-CoreDream-9Black; text-align: center; font-size: 130%;">결제하기</h5>
+                </div>
+            </div>
+        </header>
+        <!-- Header ends -->
+
+        <!-- main page content -->
+        <div class="main-container container">
+            <!-- selected contacts -->
+            <hr>
+            <div class="row mb-4">
+                <div class="col-auto">
+                </div>
+                <div class="col align-self-center ps-0">
+                    <span style="font-family: S-CoreDream-7ExtraBold; font-size: 13pt;">상품결제</span><br>
+                    <p class="text-muted size-12" style="font-family: S-CoreDream-4Regular; font-size: 5pt;">결제번호: IDE0515416385</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <div class="mb-4 text-color-theme2" style="float:left;"><img src="/assets/img/kenya.png" style="max-width: 35%; height: auto; padding-left:15px; float:left;" alt="">
+                        <span style="font-family: S-CoreDream-6Bold;  text-align: left; padding-right:40px">케냐 세렝게티 사파리투어
+                            <img src="/assets/img/close.png" style="max-width: 12pt; height: auto; padding-top:5px; padding-right:5px; float:right;" alt=""></span>
+                        <br>
+                        <span style="font-family: S-CoreDream-5Medium;  text-align: left; font-size: 10pt; padding-right: 185px; color: #ACACAC;"></span>
+                    </div>
+                    <div class="mb-4 text-color-theme2" style="float:left;"><img src="/assets/img/do.png" style="max-width: 35%; height: auto; padding-left:15px; float:left;" alt="">
+                        <span style="font-family: S-CoreDream-6Bold; text-align: left; padding-right:58px;">카가닛토 전통공예 체험
+                        <img src="/assets/img/close.png" style="max-width: 12pt; height: auto; padding-top:5px; padding-right:5px; float:right;" alt=""></span>
+                        <br>
+                        <span style="font-family: S-CoreDream-5Medium;  text-align: left; font-size: 10pt; padding-right: 185px; color: #ACACAC;"></span>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-auto">
+                    </div>
+                    <div class="col align-self-center ps-0"><br>
+                        <span style="font-family: S-CoreDream-7ExtraBold; font-size: 13pt; float:left;">날짜선택</span>
+                        <br><br>
+                    </div>
+                    <span style="font-family: S-CoreDream-6Bold; text-align: left; margin-left: 3%; margin-bottom: 5%;">케냐 세렝게티 사파리투어
+                        <div >
+                            <input type="text" id="datePicker1" class="form-control" value="2021-09-27">
+                        </div>
+                    </span>
+                    <span style="font-family: S-CoreDream-6Bold; text-align: left; margin-left: 3%;">카가닛토 전통공예 체험
+                        <div >
+                            <input type="text" id="datePicker1" class="form-control" value="2021-10-07">
+                        </div>
+                    </span>
+
+
+                    
+
+                    <div class="row mb-4">
+                        <div class="col-auto">
+                    </div>
+                    <div class="col align-self-center ps-0"><br><br>
+                        <span style="font-family: S-CoreDream-7ExtraBold; font-size: 13pt; float:left;">분할결제</span><br><br>
+                    <input type="text" class="trasparent-input text-center" value="25,000" placeholder="Enter Amount" style="font-family: S-CoreDream-7ExtraBold">
+                    <div class="text-center"><span class="text-muted" style="font-family: S-CoreDream-5Medium;">분할 납부 횟수</span>
+                        <button class="btn btn-link btn-sm text-muted px-1 dropdown-toggle" type="button" id="ln1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 w-110" aria-labelledby="ln1">
+                            <li><button type= "button" class="dropdown-item active"  style='font-family: S-CoreDream-4Regular;'>1번</button></li>
+                            <li><button type= "button" id = '3times' class="dropdown-item"  style='font-family: S-CoreDream-4Regular;'>3번</button></li>
+                            <li><button type="button" class="dropdown-item" style='font-family: S-CoreDream-4Regular;'>6번</button></li>
+                            <li><button type="button"  class="dropdown-item" href="#" style='font-family: S-CoreDream-4Regular;'>12번</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- amount breakdown -->
+            <div class="row mb-3">
+                <div class="col">
+                    <p class="text-color-theme" style="font-family: S-CoreDream-5Medium; float: left; margin-left: 5%;">케냐 세렝게티 사파리투어</p>
+                </div>
+                <div class="col-auto text-end">
+                    <p class="text-muted" style="font-family: S-CoreDream-5Medium;">월 18,333원</p>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <p class="text-color-theme" style="font-family: S-CoreDream-5Medium; float: left; margin-left: 5%;">카가닛토 전통공예 체험</p>
+                </div>
+                <div class="col-auto text-end">
+                    <p class="text-muted" style="font-family: S-CoreDream-5Medium;">월 6,666원</p>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <p class="text-color-theme" style="font-family: S-CoreDream-5Medium; float: left; margin-left: 5%;">쿠폰 할인</p>
+                </div>
+                <div class="col-auto text-end" style="color:#F1592A">
+                    <p class="text-muted" style="font-family: S-CoreDream-5Medium;">-20,000원</p>
+                </div>
+            </div>
+            <div>
+                 <hr>
+            </div>
+            <div class="row mb-4 fw-medium ">
+                <div class="col">
+                    <p class="text-color-theme" style="font-family: S-CoreDream-7ExtraBold; float: left; margin-left: 5%;">이번 달 최종 금액</p>
+                </div>
+                <div class="col-auto text-end">
+                    <p class="text-muted" style="font-family: S-CoreDream-7ExtraBold; font-size: 15pt;">5,000원</p><br>
+                </div>
+            </div>
+
+            
+            <div>
+                <span style="font-family: S-CoreDream-7ExtraBold; font-size: 13pt; float:left; margin-left: 4%;">빠른결제</span><br><br>
+            </div>
+            
+
+            <!-- Saving targets -->
+                        <div class="row mb-3">
+                            <div class="col-12 px-0">
+                                <div class="swiper-container cardswiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row mb-3">
+                                                        <div class="col-auto align-self-center">
+                                                            <img src="/assets/img/masterocard.png" alt="">
+                                                        </div>
+                                                        <div class="col align-self-center text-end">
+                                                            <p class="small">
+                                                                <span class="text-uppercase size-10" style="font-family: ONE-Mobile-Regular;">만료일자</span><br>
+                                                                <span class="text-muted">09/24</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <h4 class="fw-normal mb-2">
+                                                                352,400
+                                                                <span class="small text-muted" style="font-family: ONE-Mobile-Regular;">원</span>
+                                                            </h4>
+                                                            <p class="mb-0 text-muted size-12">0321 8765 6625 3421</p>
+                                                            <p class="text-muted size-12" style="font-family: ONE-Mobile-Regular;">체크카드</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="card dark-bg">
+                                                <div class="card-body">
+                                                    <div class="row mb-3">
+                                                        <div class="col-auto align-self-center">
+                                                            <img src="/assets/img/masterocard.png" alt="">
+                                                        </div>
+                                                        <div class="col align-self-center text-end">
+                                                            <p class="small">
+                                                                <span class="text-uppercase size-10">만료일자</span><br>
+                                                                <span class="text-muted">06/25</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <h4 class="fw-normal mb-2">
+                                                                56,050
+                                                                <span class="small text-muted" style="font-family: ONE-Mobile-Regular;">원</span>
+                                                            </h4>
+                                                            <p class="mb-0 text-muted size-12">1041 2021 0001 0154</p>
+                                                            <p class="text-muted size-12" style="font-family: ONE-Mobile-Regular;">체크카드</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="card theme-radial-gradient border-0">
+                                                <div class="card-body">
+                                                    <div class="row mb-3">
+                                                        <div class="col-auto align-self-center">
+                                                            <i class="bi bi-wallet2"></i> Wallet
+                                                        </div>
+                                                        <div class="col align-self-center text-end">
+                                                            <p class="small">
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <h4 class="fw-normal mb-2">
+                                                                0
+                                                                <span class="small text-muted" style="font-family: ONE-Mobile-Regular;">원</span>
+                                                            </h4>
+                                                            <p class="mb-0 text-muted size-12" style="font-family: ONE-Mobile-Regular; float: right; margin-top: 5%;">충전하기</p>
+                                                            <p class="text-muted size-12" style="font-family: ONE-Mobile-Regular;">간편결제</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <div>
+                    <br>
+                </div>
+                <p class="mb-3">
+                    <input type="checkbox" name="checker" id="checker1">
+                    <label for="checker1" class="text-muted" style="font-family: S-CoreDream-4Regular; font-size:8pt;">현금영수증 발급신청　　　</label>
+                    <input type="checkbox" name="checker" id="checker2">
+                    <label for="checker2" class="text-muted" style="font-family: S-CoreDream-4Regular; font-size:8pt;">발급안함</label>
+                    <br><br>
+                </p>
+            <div class="row mb-4">
+                <div class="col-12 " style="font-family: S-CoreDream-6Bold; margin-left: 4%;">
+                    <button class="btn btn-default btn-lg shadow-sm w-100"
+                        id="purchase_btn">
+                        구매하기
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <!-- main page content ends -->
+
+
+    </main>
+    <!-- Page ends-->
+
+    <!-- Calendar -->
+
+
+   
+    <!-- Required jquery and libraries -->
+    <script src="/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/vendor/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+
+    <!-- cookie js -->
+    <script src="/assets/js/jquery.cookie.js"></script>
+
+    <!-- Customized jquery file  -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/color-scheme.js"></script>
+
+    <!-- PWA app service registration and works -->
+    <script src="/assets/js/pwa-services.js"></script>
+
+    <!-- Chart js script -->
+    <script src="/assets/vendor/chart-js-3.3.1/chart.min.js"></script>
+
+    <!-- Progress circle js script -->
+    <script src="/assets/vendor/progressbar-js/progressbar.min.js"></script>
+
+    <!-- swiper js script -->
+    <script src="/assets/vendor/swiperjs-6.6.2/swiper-bundle.min.js"></script>
+
+    <!-- page level custom script -->
+    <script src="/assets/js/app.js"></script>
+
+
+<script>
+    var main={
+        init: function(){
+            var _this = this;
+            $('#3times').on('click', function () {
+                location.href = '/order/3times';
+            });
+            $('#purchase_btn').on('click', function(){
+                _this.order();
+            })
+        },
+        order : function () {
+            var Acno = $('#Acno').val();
+            // var price = $('#price').val();
+            var data = { Tram: "5000", "Acno":"3020000004720" };
+            $.ajax({
+                type: 'POST',
+                url: '/api/account/order',
+                contentType:'application/json',
+                data: JSON.stringify(data),
+            }).done(function(res) {
+                console.log(JSON.stringify(res));
+                location.href = '/order/success'
+            }).fail(function (error) {
+                alert(JSON.stringify(error));
+            });
+        }
+    };
+    main.init();
+
+</script>
+</body>
+</html>

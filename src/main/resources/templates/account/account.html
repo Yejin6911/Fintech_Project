@@ -1,0 +1,86 @@
+
+
+<body>
+<div class="col-md-12">
+  <h1>결제수단등록</h1>
+  <div class="col-md-4">
+    <form>
+      <div class="form-group">
+        <input type="text" class ="form-control" id="BrdtBrno" placeholder="생년월일">
+        <input type="text" class ="form-control" id="Bncd" placeholder="은행코드">
+        <input type="text" class ="form-control" id="Acno" placeholder="계좌번호">
+        <button type="button" class="btn btn-primary" id="fin-register">계좌 등록</button>
+      </div>
+    </form>
+
+    <button type="button" class="btn btn-primary" id="inquire-balance">잔액조회</button>
+  </div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+  var main = {
+    init : function () {
+      var _this = this;
+      $('#fin-register').on('click', function () {
+        _this.register();
+      });
+
+      $('#inquire-balance').on('click', function () {
+        _this.inquire();
+      });
+    },
+
+    register : function () {
+      var BrdtBrno = $('#BrdtBrno').val();
+      var Bncd = $('#Bncd').val();
+      var Acno = $('#Acno').val();
+      var data = {"DrtrRgyn": "Y", "BrdtBrno":BrdtBrno, "Bncd": Bncd, "Acno":Acno };
+      $.ajax({
+        type: 'POST',
+        url: '/api/account/register',
+        contentType:'application/json',
+        data: JSON.stringify(data),
+      }).done(function(res) {
+        var result = JSON.parse(res);
+        var data = {"BrdtBrno":BrdtBrno, "Rgno":result.Rgno };
+        console.log(data);
+        $.ajax({
+          type: 'POST',
+          url: '/api/account/confirm',
+          contentType:'application/json',
+          data: JSON.stringify(data),
+        }).done(function(res) {
+          var result = JSON.parse(res);
+          var data = { "FinAcno":result.FinAcno }
+          alert('이거야'+JSON.stringify(data));
+        }).fail(function (error) {
+          alert('실패'+JSON.stringify(error));
+        });
+      }).fail(function (error) {
+        alert(JSON.stringify(error));
+      });
+    },
+
+    inquire : function () {
+      var FinAcno = $('#Acno').val();
+      var data = {"FinAcno": FinAcno };
+      $.ajax({
+        type: 'POST',
+        url: '/api/account/balance',
+        contentType:'application/json',
+        data: JSON.stringify(data),
+      }).done(function(res) {
+          alert('이거야'+JSON.stringify(data));
+        }).fail(function (error) {
+        alert(JSON.stringify(error));
+        });
+      }
+  };
+
+  main.init();
+</script>
+</body>
+
+
+
+
