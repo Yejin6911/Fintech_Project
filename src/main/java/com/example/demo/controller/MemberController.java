@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.AccountDto;
 import com.example.demo.dto.MemberDto;
+import com.example.demo.service.AccountService;
 import com.example.demo.service.MemberService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -50,26 +52,28 @@ public class MemberController {
         return "member/denied";
     }
 
+
+    private final AccountService accountService;
+
     @GetMapping("/user/register/card")
     public String dispRegisterCard(){
         return "account/registerCard";
     }
 
-//    public String execRegister(AccountDto accountDto){
-//    @PostMapping("/user/register/card")
-//        accountService.setAccountInfo(accountDto);
-//        return "account/registerCard";
-//    }
-//    @GetMapping("/user/register/account")
-//
-//    public String dispRegisterAccount(){
-//        return "account/registerAccount";
-//    }
-//
-//    @PostMapping("user/register/account")
-//    public String execRegisterAccount(AccountDto accountDto){
-//        accountService.setAccountInfo(accountDto);
-//        return "account/registerAccount";
-//   }
+    @PostMapping("/user/register/card")
+    public String execRegister(AccountDto accountDto){
+        accountService.setAccountInfo(accountDto);
+        return "account/registerCard";
+    }
 
+    @GetMapping("/user/register/account")
+    public String dispRegisterAccount(){
+        return "account/registerAccount";
+    }
+
+    @PostMapping("user/register/account")
+    public String execRegisterAccount(AccountDto accountDto){
+        accountService.setAccountInfo(accountDto);
+        return "account/registerAccount";
+    }
 }
