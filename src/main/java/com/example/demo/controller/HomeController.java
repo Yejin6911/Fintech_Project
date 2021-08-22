@@ -27,7 +27,15 @@ public class HomeController {
         return "home/index";
     }
 
+    @GetMapping("home/customizing")
+    public String dispCustomizing(){
+        return "home/landing";
+    }
 
+    @GetMapping("home/customized")
+    public String dispCustomized(){
+        return "home/customized";
+    }
 
 
 }

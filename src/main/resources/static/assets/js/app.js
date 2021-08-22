@@ -89,19 +89,19 @@ $(window).on('load', function () {
             });
 
             var introswiper = new Swiper(".introswiper", {
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
+                // autoplay: {
+                //     delay: 3000,
+                //     disableOnInteraction: false,
+                // },
                 pagination: {
                     el: ".swiper-pagination",
                 },
             });
             introswiper.on('reachEnd', function () {
                 introswiper.autoplay = false;
-                setTimeout(function () {
-                    window.location.replace("signin.html");
-                }, 5000);
+                // setTimeout(function () {
+                //     window.location.replace("signin.html");
+                // }, 5000);
             });
             break;
 
