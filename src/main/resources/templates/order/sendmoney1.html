@@ -137,14 +137,14 @@
                     </div>
                     <div class="col align-self-center ps-0"><br><br>
                         <span style="font-family: S-CoreDream-7ExtraBold; font-size: 13pt; float:left;">분할결제</span><br><br>
-                    <input type="text" class="trasparent-input text-center" value="5,000" placeholder="Enter Amount" style="font-family: S-CoreDream-7ExtraBold">
+                    <input type="text" class="trasparent-input text-center" value="150,000" placeholder="Enter Amount" style="font-family: S-CoreDream-7ExtraBold">
                     <div class="text-center"><span class="text-muted" style="font-family: S-CoreDream-5Medium;">분할 납부 횟수</span>
                         <button class="btn btn-link btn-sm text-muted px-1 dropdown-toggle" type="button" id="ln1"
                             data-bs-toggle="dropdown" aria-expanded="true">
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end shadow border-0 w-110" aria-labelledby="ln1">
-                            <li><button type= "button"  id = "1times" class="dropdown-item"  style='font-family: S-CoreDream-4Regular;'>1번</button></li>
-                            <li><button type = "button" class="dropdown-item active" style='font-family: S-CoreDream-4Regular;'>3번</button></li>
+                            <li><button type= "button" class="dropdown-item active"  style='font-family: S-CoreDream-4Regular;'>1번</button></li>
+                            <li><button type = "button" id = "3times" class="dropdown-item" style='font-family: S-CoreDream-4Regular;'>3번</button></li>
                             <li><button type = "button" id = "6times" class="dropdown-item" style='font-family: S-CoreDream-4Regular;'>6번</button></li>
                             <li><button type = "button" id = "12times"class="dropdown-item" style='font-family: S-CoreDream-4Regular;'>12번</button></li>
                         </ul>
@@ -157,7 +157,7 @@
                     <p class="text-color-theme" style="font-family: S-CoreDream-5Medium; float: left; margin-left: 5%;">케냐 세렝게티 사파리투어</p>
                 </div>
                 <div class="col-auto text-end">
-                    <p class="text-muted" style="font-family: S-CoreDream-5Medium;">월 36,667원</p>
+                    <p class="text-muted" style="font-family: S-CoreDream-5Medium;">월 110,000원</p>
                 </div>
             </div>
 
@@ -166,7 +166,7 @@
                     <p class="text-color-theme" style="font-family: S-CoreDream-5Medium; float: left; margin-left: 5%;">카가닛토 전통공예 체험</p>
                 </div>
                 <div class="col-auto text-end">
-                    <p class="text-muted" style="font-family: S-CoreDream-5Medium;">월 13,333원</p>
+                    <p class="text-muted" style="font-family: S-CoreDream-5Medium;">월 40,000원</p>
                 </div>
             </div>
 
@@ -186,7 +186,7 @@
                     <p class="text-color-theme" style="font-family: S-CoreDream-7ExtraBold; float: left; margin-left: 5%;">이번 달 최종 금액</p>
                 </div>
                 <div class="col-auto text-end">
-                    <p class="text-muted" style="font-family: S-CoreDream-7ExtraBold; font-size: 15pt;">30,000원</p><br>
+                    <p class="text-muted" style="font-family: S-CoreDream-7ExtraBold; font-size: 15pt;">130,000원</p><br>
                 </div>
             </div>
 
@@ -343,8 +343,8 @@
     var main={
         init: function(){
             var _this = this;
-            $('#1times').on('click', function () {
-                location.href = '/order/1times'
+            $('#3times').on('click', function () {
+                location.href = '/order/3times'
             });
             $('#6times').on('click', function () {
                 location.href = '/order/6times'
