@@ -268,9 +268,10 @@
 
         <div><img src="/assets/img/Pay.png" style="max-width: 20%; height: auto; padding-left:10px; margin-bottom: 10px;" alt="">
             <!-- 카드등록 html 넣어주세요 -->
-            <a href="/profile.html">
-                <img src="/assets/img/user4.jpg" style="max-width: 10%; height: auto; float: right;" alt="">
-            </a>
+
+                <img id = "register_card_btn" src="/assets/img/user4.jpg" style="max-width: 10%; height: auto; float: right;" alt="">
+
+
         </div>
 
         <!-- swiper credit cards -->
@@ -581,6 +582,9 @@
             $('#center').on('click', function () {
                 location.href = '/order/3times'
             });
+            $('#register_card_btn').on('click', function(){
+                location.href = '/user/register/card'
+            })
         }
     };
 
