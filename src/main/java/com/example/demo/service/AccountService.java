@@ -32,9 +32,6 @@ public class AccountService {
         return bankApiClient.inquireBalance(param);
     }
 
-
-
-
     @Transactional
     public Long setAccountInfo(AccountDto accountDto){
         return paymentRepository.save(accountDto.toEntity()).getId();
