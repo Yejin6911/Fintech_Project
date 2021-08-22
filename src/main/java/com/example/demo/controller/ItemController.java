@@ -4,7 +4,9 @@ import com.example.demo.domain.entity.item.Category;
 import com.example.demo.domain.entity.item.Item;
 import com.example.demo.domain.entity.item.ItemRating;
 import com.example.demo.domain.entity.item.Seller;
+import com.example.demo.service.CategoryService;
 import com.example.demo.service.ItemService;
+import com.example.demo.service.SellerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,8 @@ import java.util.List;
 public class ItemController {
 
     private final ItemService itemService;
+    private final CategoryService categoryService;
+    private final SellerService sellerService;
 //
 //    @GetMapping("/items")
 //    public String list(Model model) {
@@ -52,15 +56,17 @@ public class ItemController {
 //                "1234",
 //                "1234",
 //                "1234");
-
+//
         Seller seller = new Seller();
         seller.setFinAccount("1234");
         seller.setName("sellerName");
 
-
+        sellerService.saveSeller(seller);
 
         Category category = new Category();
         category.setName("activity");
+        categoryService.saveCategory(category);
+//
 //
         Item item = new Item();
         item.setName("test");
@@ -70,7 +76,7 @@ public class ItemController {
         item.setDescription("테스트입니다.");
         item.setSeller(seller);
         item.setCategory(category);
-
+//
         itemService.saveItem(item);
 //
 //        Item item2 = new Item();
