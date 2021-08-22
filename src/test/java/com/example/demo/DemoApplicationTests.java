@@ -70,14 +70,12 @@ class DemoApplicationTests {
         item.setName("test");
         item.setPrice(10000);
         item.setLoanCount(3);
-        item.setRating(ItemRating.FIVE);
         item.setDescription("테스트입니다.");
 
         Item item2 = new Item();
         item2.setName("test");
         item2.setPrice(20000);
         item2.setLoanCount(2);
-        item2.setRating(ItemRating.FIVE);
         item2.setDescription("테스트입니다2.");
 
         itemRepository.save(item);

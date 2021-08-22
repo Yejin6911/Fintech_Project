@@ -40,23 +40,23 @@ public class Cart {
 
     }
 
-    public void addCartItem(CartItem orderItem) {
-        cartItems.add(orderItem);
-        orderItem.setCart(this);
+    public void addCartItem(CartItem cartItem) {
+        cartItems.add(cartItem);
+        cartItem.setCart(this);
     }
 
 
     //==카트 생성 메서드==//
-    public static Cart createOrder(MemberEntity member) {
+    public static Cart createCart(MemberEntity member) {
         //생성 후 장바구니 가질 멤버 지정
-        Cart order = new Cart();
-        order.setMember(member);
+        Cart cart = new Cart();
+        cart.setMember(member);
 
-        order.setStatus(CartStatus.BEFORE_ORDER);
+        cart.setStatus(CartStatus.BEFORE_ORDER);
 
         // 나중에 주문후 지정하자
 //        order.setOrderDate(LocalDateTime.now());
-        return order;
+        return cart;
     }
 
     //==비즈니스 로직==//

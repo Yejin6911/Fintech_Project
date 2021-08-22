@@ -14,7 +14,6 @@
                 <th>상품명</th>
                 <th>가격</th>
                 <th>할부개월</th>
-                <th>하트</th>
                 <th></th>
             </tr>
             </thead>
@@ -24,9 +23,8 @@
                 <td th:text="${item.name}"></td>
                 <td th:text="${item.price}"></td>
                 <td th:text="${item.loanCount}"></td>
-                <td th:text="${item.rating}"></td>
                 <td>
-                    <a href="ItemDetails.html" th:href="@{/items/{id} (id=${item.id})}" class="btn btn-primary" role="button">상세페이지</a>
+                    <a href="itemDetails.html" th:href="@{/items/{id} (id=${item.id})}" class="btn btn-primary" role="button">상세페이지</a>
                 </td>
                 <td>
                     <a href="#" th:href="@{/items/{id}/edit (id=${item.id})}" class="btn btn-primary" role="button">수정</a>

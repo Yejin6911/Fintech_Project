@@ -29,14 +29,14 @@ public class CartItem {
 
     private int price; //주문 가격
 
-    //==생성 메서드==//
-    public static CartItem createOrderItem(Item item) {
+    public static CartItem createCartItem(Item item) {
         CartItem cartItem = new CartItem();
         cartItem.setItem(item);
         cartItem.setPrice(item.getPrice());
 
         return cartItem;
     }
+
 
     //==비즈니스 로직==//
 //    public void cancel() {

@@ -20,14 +20,8 @@ public class Item {
 
     private int price;
 
-    // 판매자 계좌번호
-    private String sellerAccount;
-
     // 해당 상품의 정해진 할부 개월수
     private int loanCount;
-
-    @Enumerated(EnumType.ORDINAL)
-    private ItemRating rating;
 
     @Lob
     private String description;
@@ -42,6 +36,6 @@ public class Item {
     private Category category;
 
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL)
-    private List<CartItem> carts = new ArrayList<>();
+    private List<CartItem> cartItems = new ArrayList<>();
 
 }
