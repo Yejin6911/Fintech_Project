@@ -35,11 +35,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception{
         http.authorizeRequests()
                 //페이지 권한 설정(Role 기준으로)
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/user/myinfo").hasRole("MEMBER")
-                .antMatchers("/board/**").hasRole("MEMBER")
-                .antMatchers("/board/**").hasRole("ADMIN")
-                .antMatchers("/board/post/edit/**").hasRole("ADMIN")
+                .antMatchers("/user/**").hasRole("MEMBER")
+                .antMatchers("/api/**").hasRole("MEMBER")
+                .antMatchers("/home/**").hasRole("MEMBER")
+                .antMatchers("/account/**").hasRole("MEMBER")
+                .antMatchers("/order/**").hasRole("MEMBER")
                 .antMatchers("/**").permitAll()
 
                 .and() // 로그인 설정
@@ -51,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and() // 로그아웃 설정
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
-                .logoutSuccessUrl("/user/logout/result")
+                .logoutSuccessUrl("/home")
                 .invalidateHttpSession(true)
 
                 .and()

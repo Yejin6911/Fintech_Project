@@ -22,12 +22,13 @@ public class AccountService {
     public final MemberRepository memberRepository;
     public final AccountRepository accountRepository;
 
-    @Transactional(readOnly = true)
-    public Long saveAccount(String finAcno, String userEmail) {
+    @Transactional(readOnly = false)
+    public Long saveAccount(String finAcno, String userEmail, String acno) {
         MemberEntity memberEntity = memberRepository.findByEmail(userEmail).get();
         AccountDto accountDto = new AccountDto();
         accountDto.setFinAcno(finAcno);
         accountDto.setMemberEntity(memberEntity);
+        accountDto.setAcno(acno);
         return accountRepository.save(accountDto.toEntity()).getId();
     }
 
@@ -48,7 +49,8 @@ public class AccountService {
 
     @Transactional(readOnly = true)
     public String order(Map<String, String> param) {
-        String FinAcno = "00820100010630000000000011386";
+        Account account = accountRepository.findByAcno(param.get("Acno"));
+        String FinAcno = account.getFinAcno();
         return accountApiClient.drawingTransfer(param, FinAcno);
     }
 

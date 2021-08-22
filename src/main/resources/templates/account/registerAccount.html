@@ -358,7 +358,7 @@
                     data: JSON.stringify(data),
                 }).done(function(res) {
                     var result = JSON.parse(res);
-                    var data = {"BrdtBrno":BrdtBrno, "Rgno":result.Rgno };
+                    var data = {"BrdtBrno":BrdtBrno, "Rgno":result.Rgno, "Acno":Acno};
                     console.log(data);
                     $.ajax({
                         type: 'POST',
@@ -371,21 +371,6 @@
                     }).fail(function (error) {
                         alert('실패'+JSON.stringify(error));
                     });
-                }).fail(function (error) {
-                    alert(JSON.stringify(error));
-                });
-            },
-
-            inquire : function () {
-                var FinAcno = $('#Acno').val();
-                var data = {"FinAcno": FinAcno };
-                $.ajax({
-                    type: 'POST',
-                    url: '/api/account/balance',
-                    contentType:'application/json',
-                    data: JSON.stringify(data),
-                }).done(function(res) {
-                    alert('이거야'+JSON.stringify(data));
                 }).fail(function (error) {
                     alert(JSON.stringify(error));
                 });

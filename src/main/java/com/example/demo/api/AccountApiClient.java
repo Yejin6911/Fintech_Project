@@ -173,7 +173,7 @@ public class AccountApiClient {
     }
 
     //출금이체
-    public String drawingTransfer(Map<String, String> param, String FinAcno) {
+    public String drawingTransfer(Map<String, String> param, String finAcno) {
         Map<String, String> header = new HashMap<>();
         header.put("ApiNm", DrawingTransfer);
         header.put("Tsymd", Tsymd);
@@ -186,7 +186,7 @@ public class AccountApiClient {
 
         Map<String, Object> params = new HashMap<>();
         params.put("Header", header);
-        params.put("FinAcno", FinAcno);
+        params.put("FinAcno", finAcno);
         params.put("Tram", param.get("Tram"));
         params.put("DractOtlt", "(주)놀아보새");
 

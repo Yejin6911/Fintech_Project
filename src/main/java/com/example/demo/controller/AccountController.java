@@ -24,7 +24,7 @@ public class AccountController {
         String FinAcno = accountService.confirm(param);
         String email = principal.getName();
         System.out.println(email);
-        accountService.saveAccount(FinAcno, email);
+        accountService.saveAccount(FinAcno, email, param.get("Acno"));
         return FinAcno;
     }
 

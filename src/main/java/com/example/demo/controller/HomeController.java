@@ -27,10 +27,7 @@ public class HomeController {
         return "home/index";
     }
 
-    @GetMapping("/order")
-    public String dispOrder(Principal principal, Model model){
-        return "order/sendmoney4";
-    }
+
 
 
 }
