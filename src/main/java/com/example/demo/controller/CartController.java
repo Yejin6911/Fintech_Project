@@ -33,10 +33,11 @@ public class CartController {
         Cart cart = member.getCart();
         List<CartItem> cartItems = cart.getCartItems();
 
+
         model.addAttribute("member", member);
         model.addAttribute("cartItems", cartItems);
         model.addAttribute("totalPrice", cart.getTotalPrice());
-        return "cart/sendmoney3";
+        return "cart/cartForm";
     }
 
     //장바구니 보여주기전 미리 세팅해 놓음
