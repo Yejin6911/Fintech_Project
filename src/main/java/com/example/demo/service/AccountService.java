@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.api.AccountApiClient;
+import com.example.demo.domain.entity.Account;
 import com.example.demo.domain.entity.MemberEntity;
 import com.example.demo.dto.AccountDto;
 import com.example.demo.repository.AccountRepository;
@@ -9,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @RequiredArgsConstructor
@@ -19,6 +22,7 @@ public class AccountService {
     public final MemberRepository memberRepository;
     public final AccountRepository accountRepository;
 
+    @Transactional(readOnly = true)
     public Long saveAccount(String finAcno, String userEmail) {
         MemberEntity memberEntity = memberRepository.findByEmail(userEmail).get();
         AccountDto accountDto = new AccountDto();
@@ -37,13 +41,31 @@ public class AccountService {
         return accountApiClient.confirmFinAcoount(param);
     }
 
+    @Transactional(readOnly = true)
     public String inquire(Map<String, String> param) {
         return accountApiClient.inquireBalance(param);
     }
 
-
+    @Transactional(readOnly = true)
     public String order(Map<String, String> param) {
         String FinAcno = "00820100010630000000000011386";
         return accountApiClient.drawingTransfer(param, FinAcno);
+    }
+
+    public List<AccountDto> getAccountList(String userEmail) {
+        MemberEntity memberEntity = memberRepository.findByEmail(userEmail).get();
+        List<Account> accounts = accountRepository.findAllByMemberEntity(memberEntity);
+
+        List<AccountDto> accountDtoList = new ArrayList<>();
+
+        for(Account board: accounts) {
+            AccountDto accountDto = AccountDto.builder()
+                    .id(board.getId())
+                    .memberEntity(board.getMemberEntity())
+                    .finAcno(board.getFinAcno())
+                    .build();
+            accountDtoList.add(accountDto);
+        }
+        return accountDtoList;
     }
 }

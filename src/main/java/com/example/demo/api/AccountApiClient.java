@@ -28,6 +28,10 @@ public class AccountApiClient {
     private final String InquireBalance = "InquireBalance";
     private final String DrawingTransfer = "DrawingTransfer";
 
+    private final String DrawingTransferA = "DrawingTransferA";
+    private final String ReceivedTransferA = "ReceivedTransferA";
+
+
     private final String AccessToken = "fbc2f45a85d5e47781183a7417f6c34d5c4c7bbba6f3ad6763ff024f9caf4f9c";
     private final String NHApiUrl_finAccount = "https://developers.nonghyup.com/OpenFinAccountDirect.nh";
     private final String NHApiUrl_confirmAccount = "https://developers.nonghyup.com/CheckOpenFinAccountDirect.nh";
@@ -43,7 +47,6 @@ public class AccountApiClient {
 
     private final String Iscd = "001063";
     private final String FintechApsno = "001";
-    private final String ApiSvcCd = "DrawingTransferA";
 
     public static String numberGen(int len, int dupCd ) {
         Random rand = new Random();
@@ -77,7 +80,7 @@ public class AccountApiClient {
         header.put("Trtm", Trtm);
         header.put("Iscd", Iscd);
         header.put("FintechApsno", FintechApsno);
-        header.put("ApiSvcCd", ApiSvcCd);
+        header.put("ApiSvcCd", DrawingTransferA);
         header.put("IsTuno", numberGen(10,2));
         header.put("AccessToken", AccessToken);
 
@@ -111,7 +114,7 @@ public class AccountApiClient {
         header.put("Trtm", Trtm);
         header.put("Iscd", Iscd);
         header.put("FintechApsno", FintechApsno);
-        header.put("ApiSvcCd", ApiSvcCd);
+        header.put("ApiSvcCd", DrawingTransferA);
         header.put("IsTuno", numberGen(10,2));
         header.put("AccessToken", AccessToken);
 
@@ -141,35 +144,35 @@ public class AccountApiClient {
     public String inquireBalance(Map<String, String> param) {
 
         Map<String, String> header = new HashMap<>();
-        header.put("ApiNm", InquireBalance);
+        header.put("ApiNm", "InquireBalance");
         header.put("Tsymd", Tsymd);
         header.put("Trtm", Trtm);
         header.put("Iscd", Iscd);
         header.put("FintechApsno", FintechApsno);
-        header.put("ApiSvcCd", ApiSvcCd);
+        header.put("ApiSvcCd", ReceivedTransferA);
         header.put("IsTuno", numberGen(10,2));
         header.put("AccessToken", AccessToken);
 
         Map<String, Object> params = new HashMap<>();
         params.put("Header", header);
         params.put("FinAcno", param.get("FinAcno"));
+
         String body = null;
         try {
             body = objectMapper.writeValueAsString(params);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(body);
+
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
 
         HttpEntity entity = new HttpEntity(body, headers);
-        System.out.println(entity);
         String result = restTemplate.postForEntity(NHApiUrl_inquireBalance, entity, String.class).getBody();
         return result;
-
     }
 
+    //출금이체
     public String drawingTransfer(Map<String, String> param, String FinAcno) {
         Map<String, String> header = new HashMap<>();
         header.put("ApiNm", DrawingTransfer);
@@ -177,7 +180,7 @@ public class AccountApiClient {
         header.put("Trtm", Trtm);
         header.put("Iscd", Iscd);
         header.put("FintechApsno", FintechApsno);
-        header.put("ApiSvcCd", ApiSvcCd);
+        header.put("ApiSvcCd", DrawingTransferA);
         header.put("IsTuno", numberGen(10,2));
         header.put("AccessToken", AccessToken);
 
