@@ -36,6 +36,9 @@ public class MemberEntity {
     @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.ALL)
     private List<Bnpl> bnpls = new ArrayList<>();
 
+    @OneToOne(mappedBy = "member")
+    private Cart cart;
+
     @Builder
     public MemberEntity(Long id, String name, String email, String password, String birthday){
         this.id = id;
