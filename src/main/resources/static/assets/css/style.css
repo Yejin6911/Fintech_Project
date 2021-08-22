@@ -1,6 +1,6 @@
 /*
 ==================================
-Table of content
+Table of content 
 ==================================
 
 1. variable
@@ -16,7 +16,7 @@ Table of content
 11. sidebar
 12. card
 13. swiper sliders
-14. list
+14. list 
 15. footer
 16. dark mode
 17. filter
@@ -36,13 +36,13 @@ Table of content
   --bs-gutter-x: var(--fimobile-padding);
   --fimobile-input-rounded: 10px;
   /* radial gradient colors */
-  --fimobile-theme-color-grad-1: #57bdff;
-  --fimobile-theme-color-grad-2: #4f77fb;
-  --fimobile-theme-color-grad-3: #6528cf;
+  --fimobile-theme-color-grad-1: #1DACA7;
+  --fimobile-theme-color-grad-2: #1DACA7;
+  --fimobile-theme-color-grad-3: #1DACA7;
   /* color schemes */
   --fimobile-theme-color: #1DACA7;
   --fimobile-theme-color-2: #333333;
-  --fimobile-theme-color-3: #F4D137;
+  --fimobile-theme-color-3: #F4D137
   --fimobile-theme-color-light: #d3ddfd;
   --fimobile-theme-bordercolor: #dadff6;
   --fimobile-theme-text: #ffffff;
@@ -87,11 +87,11 @@ Table of content
 
 .theme-indigo {
   /* radial gradient colors */
-  --fimobile-theme-color-grad-1: #0897e9;
+  --fimobile-theme-color-grad-1: #1DACA7;
   --fimobile-theme-color-grad-2: #5100d4;
   --fimobile-theme-color-grad-3: #270069;
   /* color schemes */
-  --fimobile-theme-color: #6610f2;
+  --fimobile-theme-color: #1DACA7;
   --fimobile-theme-color-2: #550bce;
   --fimobile-theme-color-light: #f4fdff;
   --fimobile-theme-bordercolor: rgba(51, 7, 124, 0.15);
@@ -113,11 +113,11 @@ Table of content
 
 .theme-purple {
   /* radial gradient colors */
-  --fimobile-theme-color-grad-1: #e908d8;
+  --fimobile-theme-color-grad-1: #1DACA7;
   --fimobile-theme-color-grad-2: #5a2ab3;
   --fimobile-theme-color-grad-3: #300284;
   /* color schemes */
-  --fimobile-theme-color: #6f42c1;
+  --fimobile-theme-color: #1DACA7;
   --fimobile-theme-color-2: #5d36a4;
   --fimobile-theme-color-light: #f4fdff;
   --fimobile-theme-bordercolor: rgba(56, 32, 99, 0.15);
@@ -139,7 +139,7 @@ Table of content
 
 .theme-pink {
   /* radial gradient colors */
-  --fimobile-theme-color-grad-1: #f38ac4;
+  --fimobile-theme-color-grad-1: #1DACA7;
   --fimobile-theme-color-grad-2: #d11e78;
   --fimobile-theme-color-grad-3: #300284;
   /* color schemes */
@@ -165,7 +165,7 @@ Table of content
 
 .theme-red {
   /* radial gradient colors */
-  --fimobile-theme-color-grad-1: #ffc107;
+  --fimobile-theme-color-grad-1: #1DACA7;
   --fimobile-theme-color-grad-2: #e91547;
   --fimobile-theme-color-grad-3: #77001c;
   /* color schemes */
@@ -10634,9 +10634,9 @@ fieldset:disabled .btn {
 }
 
 /*!
- FiMobile customize css starts here
+ FiMobile customize css starts here 
  * FiMobile v2 (https://maxartkiller.com/)
- * Copyright 2021 Maxartkiller
+ * Copyright 2021 Maxartkiller 
  */
 /* 2. variables */
 :root {
@@ -10649,11 +10649,11 @@ fieldset:disabled .btn {
   --bs-gutter-x: var(--fimobile-padding);
   --fimobile-input-rounded: 10px;
   /* radial gradient colors */
-  --fimobile-theme-color-grad-1: #57bdff;
-  --fimobile-theme-color-grad-2: #4f77fb;
-  --fimobile-theme-color-grad-3: #6528cf;
+  --fimobile-theme-color-grad-1: #1DACA7;
+  --fimobile-theme-color-grad-2: #1DACA7;
+  --fimobile-theme-color-grad-3: #1DACA7;
   /* color schemes 버튼 */
-  --fimobile-theme-color: #1DACA7;
+  --fimobile-theme-color: #1DACA7; 
   --fimobile-theme-color-2: #333333;
   --fimobile-theme-color-3: #F4D137;
   --fimobile-theme-color-light: #d3ddfd;
@@ -10700,9 +10700,9 @@ fieldset:disabled .btn {
 
 .theme-indigo {
   /* radial gradient colors */
-  --fimobile-theme-color-grad-1: #0897e9;
-  --fimobile-theme-color-grad-2: #5100d4;
-  --fimobile-theme-color-grad-3: #270069;
+  --fimobile-theme-color-grad-1: #1DACA7;
+  --fimobile-theme-color-grad-2: #1DACA7;
+  --fimobile-theme-color-grad-3: #1DACA7;
   /* color schemes */
   --fimobile-theme-color: #6610f2;
   --fimobile-theme-color-2: #550bce;
@@ -11345,7 +11345,7 @@ main {
 
 .theme-radial-gradient {
   background: var(--fimobile-theme-color-grad-1);
-  background: -moz-radial-gradient(30% 30%, ellipse cover, var(--fimobile-theme-color-grad-1) 0%, var(--fimobile-theme-color-grad-2) 50%, var(--fimobile-theme-color-grad-3) 100%);
+  background: -moz-radial-gradient(30% 30%, ellipse cover, var(--fimobile-theme-color-grad-1) 0%, var(--fimobile-theme-color-grad-2) 0%, var(--fimobile-theme-color-grad-3) 100%);
   background: -webkit-radial-gradient(30% 30%, ellipse cover, var(--fimobile-theme-color-grad-1) 0%, var(--fimobile-theme-color-grad-2) 50%, var(--fimobile-theme-color-grad-3) 100%);
   background: radial-gradient(ellipse at 30% 30%, var(--fimobile-theme-color-grad-1) 0%, var(--fimobile-theme-color-grad-2) 50%, var(--fimobile-theme-color-grad-3) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--fimobile-theme-color-grad-1)', endColorstr='var(--fimobile-theme-color-grad-3)',GradientType=1 );
@@ -11917,6 +11917,48 @@ main {
 .loader-cube-animate {
   animation-name: cubeanimate;
   animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+@font-face {
+     font-family: 'S-CoreDream-7ExtraBold';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+}
+@font-face {
+  font-family: 'S-CoreDream-9Black';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-9Black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'S-CoreDream-5Medium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'EliceDigitalBaeum_Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/EliceDigitalBaeum_Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ONE-Mobile-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'BMDOHYEON';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: 'GongGothicMedium';
@@ -13159,7 +13201,7 @@ a.card {
   --fimobile-input-color: rgba(0, 0, 0, 0.25);
   --fimobile-input-bordercolor: rgba(255, 255, 255, 0.1);
   --fimobile-input-text: #ffffff;
-  --fimobile-theme-color: #0a298d;
+  --fimobile-theme-color: #1DACA7;
   --fimobile-theme-color-light: rgba(10, 41, 141, 0.5);
   --fimobile-theme-bordercolor: #041344;
   --fimobile-theme-text: #ffffff;
@@ -13213,7 +13255,7 @@ a.card {
 }
 
 .dark-mode .theme-indigo {
-  --fimobile-theme-color: #25055a;
+  --fimobile-theme-color: #1DACA7;
   --fimobile-theme-color-light: #290564;
   --fimobile-theme-bordercolor: #150333;
   --fimobile-theme-text: #ffffff;
@@ -13230,7 +13272,7 @@ a.card {
 }
 
 .dark-mode .theme-purple {
-  --fimobile-theme-color: #291848;
+  --fimobile-theme-color: #1DACA7;
   --fimobile-theme-color-light: #2d1a50;
   --fimobile-theme-bordercolor: #170e29;
   --fimobile-theme-text: #ffffff;
@@ -13881,9 +13923,9 @@ a.card {
 input[type=checkbox] {
   display:none;
 }
-input[type=checkbox] + label {
-  cursor: pointer;
-  padding-left: 20px;
+input[type=checkbox] + label { 
+  cursor: pointer; 
+  padding-left: 20px; 
   background-repeat: no-repeat;
   background-image: url('../img/checker-off.svg');
 }

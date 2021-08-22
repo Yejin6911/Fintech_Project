@@ -10,6 +10,11 @@ public class HomeController {
 
     @GetMapping("/home")
     public String dispHome(){
-        return "index";
+        return "home/index";
     }
+
+    @GetMapping("/order")
+    public String dispOrder(){return "order/sendmoney4";}
+
+
 }

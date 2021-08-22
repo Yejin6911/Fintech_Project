@@ -31,25 +31,9 @@ public class AccountService {
         return accountApiClient.inquireBalance(param);
     }
 
-<<<<<<< HEAD
-    @Transactional
-    public Long setAccountInfo(AccountDto accountDto){
-        return paymentRepository.save(accountDto.toEntity()).getId();
-    }
 
-}
-=======
     public String order(Map<String, String> param) {
         String FinAcno = "00820100010630000000000011386";
         return accountApiClient.drawingTransfer(param, FinAcno);
     }
 }
-
-
-//
-//    @Transactional
-//    public Long setAccountInfo(AccountDto accountDto){
-//        return paymentRepository.save(accountDto.toEntity()).getId();
-//    }
-
->>>>>>> e11e2f5a3daedebda225c4718dd0cbca2b5e9520
