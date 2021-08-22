@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.AccountDto;
+//import com.example.demo.dto.AccountDto;
 import com.example.demo.dto.MemberDto;
 import com.example.demo.service.AccountService;
 import com.example.demo.service.MemberService;
@@ -60,20 +60,20 @@ public class MemberController {
         return "account/registerCard";
     }
 
-    @PostMapping("/user/register/card")
-    public String execRegister(AccountDto accountDto){
-        accountService.setAccountInfo(accountDto);
-        return "account/registerCard";
-    }
+//    @PostMapping("/user/register/card")
+//    public String execRegister(AccountDto accountDto){
+//        accountService.setAccountInfo(accountDto);
+//        return "account/registerCard";
+//    }
 
     @GetMapping("/user/register/account")
     public String dispRegisterAccount(){
         return "account/registerAccount";
     }
 
-    @PostMapping("user/register/account")
-    public String execRegisterAccount(AccountDto accountDto){
-        accountService.setAccountInfo(accountDto);
-        return "account/registerAccount";
-    }
+//    @PostMapping("user/register/account")
+//    public String execRegisterAccount(AccountDto accountDto){
+//        accountService.setAccountInfo(accountDto);
+//        return "account/registerAccount";
+//    }
 }

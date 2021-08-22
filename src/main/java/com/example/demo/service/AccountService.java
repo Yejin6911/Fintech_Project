@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.api.AccountApiClient;
-import com.example.demo.dto.AccountDto;
+//import com.example.demo.dto.AccountDto;
 import com.example.demo.repository.PaymentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -38,10 +38,9 @@ public class AccountService {
 }
 
 
+//
+//    @Transactional
+//    public Long setAccountInfo(AccountDto accountDto){
+//        return paymentRepository.save(accountDto.toEntity()).getId();
+//    }
 
-    @Transactional
-    public Long setAccountInfo(AccountDto accountDto){
-        return paymentRepository.save(accountDto.toEntity()).getId();
-    }
-
-}
