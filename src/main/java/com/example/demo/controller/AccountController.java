@@ -14,7 +14,6 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-@Controller
 //@AllArgsConstructor
 public class AccountController {
 

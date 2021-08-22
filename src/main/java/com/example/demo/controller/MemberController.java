@@ -14,6 +14,11 @@ public class MemberController {
 
     private final MemberService memberService;
 
+    @GetMapping("/account")
+    public String dispAccount(){
+        return "account/account";
+    }
+
     @GetMapping("/")
     public String displogin(){
         return "member/signin";
@@ -38,6 +43,11 @@ public class MemberController {
     @GetMapping("/user/logout/result")
     public String dispLogoutResult(){
         return "member/logoutSuccess";
+    }
+
+    @PostMapping("/user/denied")
+    public String dispDenied(){
+        return "member/denied";
     }
 
 }

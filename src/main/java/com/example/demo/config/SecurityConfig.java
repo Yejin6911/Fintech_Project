@@ -27,7 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(WebSecurity web) throws Exception{
-        web.ignoring().antMatchers("/css/**", "/js/**", "/img/**", "/lib/**");
+        web.ignoring().antMatchers("/assets/**");
+
     }
 
     @Override
@@ -55,6 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                 // 403 예외처리 핸들링
+                .csrf().disable()
                 .exceptionHandling().accessDeniedPage("/user/denied");
     }
 
