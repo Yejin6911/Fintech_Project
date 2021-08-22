@@ -70,4 +70,10 @@ public class AccountService {
         }
         return accountDtoList;
     }
+
+    public String getUsername(String userEmail) {
+        MemberEntity memberEntity = memberRepository.findByEmail(userEmail).get();
+        String username = memberEntity.getName();
+        return username;
+    }
 }

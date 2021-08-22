@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:sec="" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:sec="" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -69,7 +69,7 @@
                                 </figure>
                             </div>
                             <div class="col px-0 align-self-center">
-                                <p class="mb-1" style="font-family: S-CoreDream-4Regular;">한준우</p>
+                                <p th:text="${username}" class="mb-1" style="font-family: S-CoreDream-4Regular;"></p>
                                 <p class="text-muted size-12" style="font-family: S-CoreDream-4Regular;">실버 등급</p>
                             </div>
                             <div class="col-auto">
@@ -222,7 +222,7 @@
                 </div>
             </div>
             <div class="col align-self-center ps-0">
-                <a class="text-color-theme" style="font-family: GongGothicMedium; font-size: 30px; color: #333333;">한정우
+                <a th:text="${username}" class="text-color-theme" style="font-family: GongGothicMedium; font-size: 30px; color: #333333;">
                     <!--<span sec:authentication ='name'></span>-->
                     <span class="fw-normal" style="font-family: GongGothicMedium; font-size: 18px;">님</span>
                     <span class="fw-normal" style="font-family: GongGothicMedium; font-size: 22px;">안녕하세요</span>

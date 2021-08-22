@@ -19,7 +19,9 @@ public class HomeController {
     @GetMapping("/home")
     public String dispHome(Principal principal, Model model){
         String userEmail = principal.getName();
+        String username = accountService.getUsername(userEmail);
         List<AccountDto> accountDtoList = accountService.getAccountList(userEmail);
+        model.addAttribute("username",username);
         model.addAttribute("accountList", accountDtoList);
         return "home/index";
     }
@@ -30,7 +32,10 @@ public class HomeController {
     }
 
     @GetMapping("home/customized")
-    public String dispCustomized(){
+    public String dispCustomized(Principal principal, Model model){
+        String userEmail = principal.getName();
+        String username = accountService.getUsername(userEmail);
+        model.addAttribute("username",username);
         return "home/customized";
     }
 
