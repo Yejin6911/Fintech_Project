@@ -35,6 +35,17 @@ public class MemberService implements UserDetailsService {
         return memberRepository.save(memberDto.toEntity()).getId();
     }
 
+
+    @Transactional
+    public void save(MemberEntity member) {
+        memberRepository.save(member);
+    }
+
+    public MemberEntity findMember(Long memberId) {
+        return memberRepository.findById(memberId).get();
+    }
+
+
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<MemberEntity> userEntityWrapper = memberRepository.findByEmail(email);
