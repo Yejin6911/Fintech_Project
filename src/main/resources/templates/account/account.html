@@ -10,6 +10,8 @@
         <button type="button" class="btn btn-primary" id="fin-register">계좌 등록</button>
       </div>
     </form>
+
+    <button type="button" class="btn btn-primary" id="inquire-balance">잔액조회</button>
   </div>
 </div>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -20,6 +22,10 @@
       $('#fin-register').on('click', function () {
         _this.register();
       });
+
+      $('#inquire-balance').on('click', function () {
+        _this.inquire();
+      });
     },
 
     register : function () {
@@ -29,7 +35,7 @@
       var data = {"DrtrRgyn": "Y", "BrdtBrno":BrdtBrno, "Bncd": Bncd, "Acno":Acno };
       $.ajax({
         type: 'POST',
-        url: '/api/bank/register',
+        url: '/api/account/register',
         contentType:'application/json',
         data: JSON.stringify(data),
       }).done(function(res) {
@@ -38,7 +44,7 @@
         console.log(data);
         $.ajax({
           type: 'POST',
-          url: '/api/bank/confirm',
+          url: '/api/account/confirm',
           contentType:'application/json',
           data: JSON.stringify(data),
         }).done(function(res) {
@@ -51,7 +57,22 @@
       }).fail(function (error) {
         alert(JSON.stringify(error));
       });
-    }
+    },
+
+    inquire : function () {
+      var FinAcno = $('#Acno').val();
+      var data = {"FinAcno": FinAcno };
+      $.ajax({
+        type: 'POST',
+        url: '/api/account/balance',
+        contentType:'application/json',
+        data: JSON.stringify(data),
+      }).done(function(res) {
+          alert('이거야'+JSON.stringify(data));
+        }).fail(function (error) {
+        alert(JSON.stringify(error));
+        });
+      }
   };
 
   main.init();

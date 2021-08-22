@@ -13,13 +13,18 @@ import java.util.Map;
 public class AccountController {
     private final AccountService accountService;
 
-    @PostMapping("/api/bank/register")
+    @PostMapping("/api/account/register")
     public String postRequest(@RequestBody Map<String, String> param){
         return accountService.registration(param);
     }
 
-    @PostMapping("/api/bank/confirm")
+    @PostMapping("/api/account/confirm")
     public String confirmAccount(@RequestBody Map<String, String> param){
         return accountService.confirm(param);
+    }
+
+    @PostMapping("/api/account/balance")
+    public String inquireBalance(@RequestBody Map<String, String> param) {
+        return accountService.inquire(param);
     }
 }

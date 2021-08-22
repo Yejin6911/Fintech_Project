@@ -21,4 +21,8 @@ public class AccountService {
     public String confirm(Map<String, String> param) {
         return bankApiClient.confirmFinAcoount(param);
     }
+
+    public String inquire(Map<String, String> param) {
+        return bankApiClient.inquireBalance(param);
+    }
 }

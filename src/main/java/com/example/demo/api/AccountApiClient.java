@@ -24,6 +24,8 @@ public class AccountApiClient {
 
     private final String OpenFinAccountDirect = "OpenFinAccountDirect";
     private final String CheckOpenFinAccountDirect = "CheckOpenFinAccountDirect";
+    private final String InquireBalance = "InquireBalance";
+
 
     SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
     SimpleDateFormat format2 = new SimpleDateFormat("HHmmss");
@@ -60,7 +62,7 @@ public class AccountApiClient {
     private final String AccessToken = "fbc2f45a85d5e47781183a7417f6c34d5c4c7bbba6f3ad6763ff024f9caf4f9c";
     private final String NHApiUrl_finAccount = "https://developers.nonghyup.com/OpenFinAccountDirect.nh";
     private final String NHApiUrl_confirmAccount = "https://developers.nonghyup.com/CheckOpenFinAccountDirect.nh";
-
+    private final String NHApiUrl_inquireBalance = "https://developers.nonghyup.com/InquireBalance.nhh";
     //핀어카운트직접발급
     public String requestFinAccount(Map<String, String> param) {
 
@@ -128,5 +130,38 @@ public class AccountApiClient {
         System.out.println(entity);
         String result = restTemplate.postForEntity(NHApiUrl_confirmAccount, entity, String.class).getBody();
         return result;
+    }
+
+    //잔액조회
+    public String inquireBalance(Map<String, String> param) {
+
+        Map<String, String> header = new HashMap<>();
+        header.put("ApiNm", InquireBalance);
+        header.put("Tsymd", Tsymd);
+        header.put("Trtm", Trtm);
+        header.put("Iscd", Iscd);
+        header.put("FintechApsno", FintechApsno);
+        header.put("ApiSvcCd", ApiSvcCd);
+        header.put("IsTuno", numberGen(10,2));
+        header.put("AccessToken", AccessToken);
+
+        Map<String, Object> params = new HashMap<>();
+        params.put("Header", header);
+        params.put("FinAcno", param.get("FinAcno"));
+        String body = null;
+        try {
+            body = objectMapper.writeValueAsString(params);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(body);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
+
+        HttpEntity entity = new HttpEntity(body, headers);
+        System.out.println(entity);
+        String result = restTemplate.postForEntity(NHApiUrl_inquireBalance, entity, String.class).getBody();
+        return result;
+
     }
 }
