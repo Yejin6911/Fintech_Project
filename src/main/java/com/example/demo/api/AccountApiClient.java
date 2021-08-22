@@ -2,6 +2,7 @@ package com.example.demo.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import org.json.JSONObject;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -93,12 +94,11 @@ public class AccountApiClient {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(body);
+
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
 
         HttpEntity entity = new HttpEntity(body, headers);
-        System.out.println(entity);
         String result = restTemplate.postForEntity(NHApiUrl_finAccount, entity, String.class).getBody();
         return result;
     }
@@ -126,14 +126,15 @@ public class AccountApiClient {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(body);
+
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
 
         HttpEntity entity = new HttpEntity(body, headers);
-        System.out.println(entity);
         String result = restTemplate.postForEntity(NHApiUrl_confirmAccount, entity, String.class).getBody();
-        return result;
+        JSONObject jObject = new JSONObject(result);
+        String FinAcno = jObject.getString("FinAcno");
+        return FinAcno;
     }
 
     //잔액조회
@@ -197,7 +198,6 @@ public class AccountApiClient {
         headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
 
         HttpEntity entity = new HttpEntity(body, headers);
-        System.out.println(entity);
         String result = restTemplate.postForEntity(NHApiUrl_drawingTransfer, entity, String.class).getBody();
         return result;
     }

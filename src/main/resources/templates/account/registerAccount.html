@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:sec="" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">`
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -259,7 +259,7 @@
                 <tr>
                     <td>
                         <img src='/assets/img/NH.png' width='30'><br>
-                        <button><input type="checkbox" value="NH농협">NH농협</input></button>
+                        <button><input id = "Bncd" type="checkbox" value="011">NH농협</input></button>
                     </td>
                     <td>
                         <img src='/assets/img/Kakao.png' width='40'><br>
@@ -288,10 +288,15 @@
             </table>
         
             <div>
-                <label for='account'>계좌번호</label></br>
-                    <input id='account' type='account' name='myaccount' pattern="\d{4}-\d{4}-\d{4}-\d{4}" placeholder='1234-5678-1234-5678'><br>
-                <hr>          
+                <label for='Acno'>계좌번호</label></br>
+                    <input id='Acno' type='account' name='myaccount'  placeholder='-없이 입력'><br>
+                <hr>
+
+                <label for='BrdtBrno'>생년월일</label></br>
+                    <input id='BrdtBrno' type='birth' name='mybirth' pattern="\d{6}" placeholder='20210823'><br>
+                <hr>
             </div>
+
         </div>
 
         <!-- </iframe> -->
@@ -309,7 +314,7 @@
 
     <!-- footer -->
     <footer>
-        <button>다음</button>
+        <button id="fin-register">등록</button>
     </footer>
 
     <!-- Required jquery and libraries -->
@@ -330,7 +335,64 @@
     <!-- page level custom script -->
     <script src="/assets/js/app.js"></script>
 
+    <!-- 핀어카운트 발급 -->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        var main = {
+            init : function () {
+                var _this = this;
+                $('#fin-register').on('click', function () {
+                    _this.register();
+                });
+            },
 
+            register : function () {
+                var BrdtBrno = $('#BrdtBrno').val();
+                var Bncd = $('#Bncd').val();
+                var Acno = $('#Acno').val();
+                var data = {"DrtrRgyn": "Y", "BrdtBrno":BrdtBrno, "Bncd": Bncd, "Acno":Acno };
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/account/register',
+                    contentType:'application/json',
+                    data: JSON.stringify(data),
+                }).done(function(res) {
+                    var result = JSON.parse(res);
+                    var data = {"BrdtBrno":BrdtBrno, "Rgno":result.Rgno };
+                    console.log(data);
+                    $.ajax({
+                        type: 'POST',
+                        url: '/api/account/confirm',
+                        contentType:'application/json',
+                        data: JSON.stringify(data),
+                    }).done(function(res) {
+                        alert(res);
+                        location.href="/home";
+                    }).fail(function (error) {
+                        alert('실패'+JSON.stringify(error));
+                    });
+                }).fail(function (error) {
+                    alert(JSON.stringify(error));
+                });
+            },
 
+            inquire : function () {
+                var FinAcno = $('#Acno').val();
+                var data = {"FinAcno": FinAcno };
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/account/balance',
+                    contentType:'application/json',
+                    data: JSON.stringify(data),
+                }).done(function(res) {
+                    alert('이거야'+JSON.stringify(data));
+                }).fail(function (error) {
+                    alert(JSON.stringify(error));
+                });
+            }
+        };
+
+        main.init();
+    </script>
 </body>
 </html>
