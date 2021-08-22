@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.api.AccountApiClient;
-import com.example.demo.dto.AccountDto;
+//import com.example.demo.dto.AccountDto;
 import com.example.demo.repository.PaymentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,32 +9,47 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
 
-@Service
 @RequiredArgsConstructor
-//@AllArgsConstructor
+@Service
 public class AccountService {
+    private final AccountApiClient accountApiClient;
 
     private PaymentRepository paymentRepository;
 
-    private final AccountApiClient bankApiClient;
 
     @Transactional(readOnly = true)
     public String registration(Map<String, String> param) {
-        return bankApiClient.requestFinAccount(param);
+        return accountApiClient.requestFinAccount(param);
     }
 
     @Transactional(readOnly = true)
     public String confirm(Map<String, String> param) {
-        return bankApiClient.confirmFinAcoount(param);
+        return accountApiClient.confirmFinAcoount(param);
     }
 
     public String inquire(Map<String, String> param) {
-        return bankApiClient.inquireBalance(param);
+        return accountApiClient.inquireBalance(param);
     }
 
+<<<<<<< HEAD
     @Transactional
     public Long setAccountInfo(AccountDto accountDto){
         return paymentRepository.save(accountDto.toEntity()).getId();
     }
 
 }
+=======
+    public String order(Map<String, String> param) {
+        String FinAcno = "00820100010630000000000011386";
+        return accountApiClient.drawingTransfer(param, FinAcno);
+    }
+}
+
+
+//
+//    @Transactional
+//    public Long setAccountInfo(AccountDto accountDto){
+//        return paymentRepository.save(accountDto.toEntity()).getId();
+//    }
+
+>>>>>>> e11e2f5a3daedebda225c4718dd0cbca2b5e9520

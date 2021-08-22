@@ -13,7 +13,6 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-
 	@Bean
 	public HiddenHttpMethodFilter hiddenHttpMethodFilter() {
 		return new HiddenHttpMethodFilter();
@@ -23,4 +22,5 @@ public class DemoApplication {
 	public RestTemplate getRestTemplate(){
 		return new RestTemplate();
 	}
+
 }

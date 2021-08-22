@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
@@ -28,6 +30,11 @@ public class MemberEntity {
     @Column(length = 20, nullable = false)
     private String birthday;
 
+    @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.ALL)
+    private List<Account> accounts = new ArrayList<>();
+
+    @OneToMany(mappedBy = "memberEntity", cascade = CascadeType.ALL)
+    private List<Bnpl> bnpls = new ArrayList<>();
 
     @Builder
     public MemberEntity(Long id, String name, String email, String password, String birthday, String phoneNumber){

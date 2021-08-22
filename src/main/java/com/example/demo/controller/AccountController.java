@@ -1,22 +1,16 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.AccountDto;
 import com.example.demo.service.AccountService;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
-@RestController
 @RequiredArgsConstructor
-//@AllArgsConstructor
+@RestController
 public class AccountController {
-
     private final AccountService accountService;
 
     @PostMapping("/api/account/register")
@@ -34,8 +28,8 @@ public class AccountController {
         return accountService.inquire(param);
     }
 
-
-
-
-
+    @PostMapping("/api/account/order")
+    public String DrawingTransfer(@RequestBody Map<String, String> param) {
+        return accountService.order(param);
+    }
 }

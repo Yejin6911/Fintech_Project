@@ -1,19 +1,17 @@
 package com.example.demo.domain.entity;
 
 import lombok.AccessLevel;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.apache.tomcat.jni.Local;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalDate;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @Entity
-@Table(name = "account")
-public class Account {
+public class Bnpl {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
@@ -22,14 +20,20 @@ public class Account {
     @JoinColumn(name = "member_id")
     private MemberEntity memberEntity;
 
-    @Column(length = 50, nullable = false)
-    private String finAcno;
+    @Column
+    private Long remainPrice;
 
-    @Builder
-    public Account(Long id, MemberEntity memberEntity, String finAcno) {
+    @Column
+    private Long leftMonth;
+
+    @Column
+    private LocalDate startDate;
+
+    public Bnpl(Long id, MemberEntity memberEntity, Long remainPrice, Long leftMonth, LocalDate startDate) {
         this.id = id;
         this.memberEntity = memberEntity;
-        this.finAcno = finAcno;
+        this.remainPrice = remainPrice;
+        this.leftMonth = leftMonth;
+        this.startDate = startDate;
     }
-
 }
