@@ -37,27 +37,5 @@ public class AccountController {
 
 
 
-    /*여기부터 나린
-    @GetMapping("/user/register/card")
-    public String dispRegisterCard(){
-        return "account/registerCard";
-    }
 
-
-    @PostMapping("/user/register/card")
-    public String execRegister(AccountDto accountDto){
-        accountService.setAccountInfo(accountDto);
-        return "account/registerCard";
-    }
-
-    @GetMapping("/user/register/account")
-    public String dispRegisterAccount(){
-        return "account/registerAccount";
-    }
-
-    @PostMapping("user/register/account")
-    public String execRegisterAccount(AccountDto accountDto){
-        accountService.setAccountInfo(accountDto);
-        return "account/registerAccount";
-   }*/
 }

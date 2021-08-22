@@ -2,8 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.api.AccountApiClient;
 import com.example.demo.dto.AccountDto;
-import com.example.demo.repository.AccountRepository;
-import lombok.AllArgsConstructor;
+import com.example.demo.repository.PaymentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +14,7 @@ import java.util.Map;
 //@AllArgsConstructor
 public class AccountService {
 
-    //private AccountRepository accountRepository;
+    private PaymentRepository paymentRepository;
 
     private final AccountApiClient bankApiClient;
 
@@ -35,10 +34,10 @@ public class AccountService {
 
 
 
-/**
+
     @Transactional
     public Long setAccountInfo(AccountDto accountDto){
-        return accountRepository.save(accountDto.toEntity()).getId();
+        return paymentRepository.save(accountDto.toEntity()).getId();
     }
-    **/
+
 }
