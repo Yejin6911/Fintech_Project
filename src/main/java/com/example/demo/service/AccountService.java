@@ -22,12 +22,13 @@ public class AccountService {
     public final MemberRepository memberRepository;
     public final AccountRepository accountRepository;
 
-    @Transactional(readOnly = true)
-    public Long saveAccount(String finAcno, String userEmail) {
+    @Transactional(readOnly = false)
+    public Long saveAccount(String finAcno, String userEmail, String acno) {
         MemberEntity memberEntity = memberRepository.findByEmail(userEmail).get();
         AccountDto accountDto = new AccountDto();
         accountDto.setFinAcno(finAcno);
         accountDto.setMemberEntity(memberEntity);
+        accountDto.setAcno(acno);
         return accountRepository.save(accountDto.toEntity()).getId();
     }
 

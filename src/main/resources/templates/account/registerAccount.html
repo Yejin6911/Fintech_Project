@@ -358,7 +358,7 @@
                     data: JSON.stringify(data),
                 }).done(function(res) {
                     var result = JSON.parse(res);
-                    var data = {"BrdtBrno":BrdtBrno, "Rgno":result.Rgno };
+                    var data = {"BrdtBrno":BrdtBrno, "Rgno":result.Rgno, "Acno":Acno};
                     console.log(data);
                     $.ajax({
                         type: 'POST',

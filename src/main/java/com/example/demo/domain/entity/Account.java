@@ -25,11 +25,15 @@ public class Account {
     @Column(length = 50)
     private String finAcno;
 
+    @Column(length = 50)
+    private String acno;
+
     @Builder
-    public Account(Long id, MemberEntity memberEntity, String finAcno) {
+    public Account(Long id, MemberEntity memberEntity, String finAcno, String acno) {
         this.id = id;
         this.memberEntity = memberEntity;
         this.finAcno = finAcno;
+        this.acno = acno;
     }
 
 }
