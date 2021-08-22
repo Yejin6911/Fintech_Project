@@ -28,15 +28,20 @@ public class CartController {
     @GetMapping("/cart/{memberId}")
     public String createForm(@PathVariable Long memberId, Model model) {
 
-        //memberId 가 1인 멤버의 장바구니를 보여준다.
-        MemberEntity member = memberService.findMember(memberId);
-        Cart cart = member.getCart();
-        List<CartItem> cartItems = cart.getCartItems();
-
-
-        model.addAttribute("member", member);
-        model.addAttribute("cartItems", cartItems);
-        model.addAttribute("totalPrice", cart.getTotalPrice());
+//        //memberId 가 1인 멤버의 장바구니를 보여준다.
+//        MemberEntity member = memberService.findMember(memberId);
+//        Cart cart = member.getCart();
+//
+//        List<CartItem> cartItems = cart.getCartItems();
+//
+//        List<CartItem> input = new ArrayList<>();
+//        for (CartItem cartItem : cartItems) {
+//            input.add(cartItem);
+//        }
+//
+//        model.addAttribute("member", member);
+//        model.addAttribute("cartItems", input);
+//        model.addAttribute("totalPrice", cart.getTotalPrice());
         return "cart/cartForm";
     }
 

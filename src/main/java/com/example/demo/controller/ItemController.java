@@ -20,7 +20,7 @@ public class ItemController {
 
     private final ItemService itemService;
 
-    @GetMapping("/items")
+    @GetMapping("/stats")
     public String list(Model model) {
         Iterable<Item> items = itemService.findItems();
         model.addAttribute("items", items);

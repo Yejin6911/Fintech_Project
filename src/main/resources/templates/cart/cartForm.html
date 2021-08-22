@@ -6,37 +6,42 @@
 <div class="container">
     <div th:replace="fragments/bodyHeader :: bodyHeader"/>
 
-    <form role="form" action="/cart" method="post">
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>상품명</th>
+                <th>가격</th>
+                <th>할부개월</th>
+                <th>사용자</th>
+                <th>총가격</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                <td>1</td>
+                <td>세랭게티</td>
+                <td>100000</td>
+                <td>3</td>
+                <td>사용자</td>
+                <td>총가격</td>
+<!--            <tr th:each="item : ${cartItems}">-->
+<!--                <td th:text="${item.getId()}"></td>-->
+<!--                <td th:text="${item.getItem().getName()}"></td>-->
+<!--                <td th:text="${item.getItem().getPrice()}"></td>-->
+<!--                <td th:text="${item.getItem().getLoanCount()}"></td>-->
+<!--                <td th:text="${member.getName()}"></td>-->
+<!--                <td th:text="${totalPrice}"></td>-->
+<!--                <td>-->
+<!--                    <a href="#" th:href="@{/items/{id}/edit (id=${item.id})}" class="btn btn-primary" role="button">수정</a>-->
+<!--                </td>-->
+<!--            </tr>-->
+            </tbody>
+        </table>
+    </div>
 
-        <div class="form-group">
-            <label for="member">주문회원</label>
-            <select name="memberId" id="member" class="form-control">
-                <option value="">회원선택</option>
-                <option th:each="member : ${members}"
-                        th:value="${member.id}"
-                        th:text="${member.name}" />
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="item">상품명</label>
-            <select name="itemId" id="item" class="form-control">
-                <option value="">상품선택</option>
-                <option th:each="item : ${items}"
-                        th:value="${item.id}"
-                        th:text="${item.name}" />
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="count">주문수량</label>
-            <input type="number" name="count" class="form-control" id="count" placeholder="주문 수량을 입력하세요">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <br/>
-    <div th:replace="fragments/footer :: footer" />
+    <div th:replace="fragments/footer :: footer"/>
 
 </div> <!-- /container -->
 
