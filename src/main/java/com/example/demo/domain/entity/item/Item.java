@@ -1,5 +1,6 @@
 package com.example.demo.domain.entity.item;
 
+import com.example.demo.domain.entity.CartItem;
 import com.example.demo.exception.NotEnoughStockException;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,8 +17,6 @@ public class Item {
     private String name;
 
     private int price;
-
-    private int stockQuantity;
 
     // 판매자 계좌번호
     private String sellerAccount;
@@ -40,23 +39,4 @@ public class Item {
     @JoinColumn(name = "category_id")
     private Category category;
 
-
-    //==비즈니스 로직==//
-    /**
-     * stock 증가
-     */
-    public void addStock(int quantity) {
-        this.stockQuantity += quantity;
-    }
-
-    /**
-     * stock 감소
-     */
-    public void removeStock(int quantity) {
-        int restStock = this.stockQuantity - quantity;
-        if (restStock < 0) {
-            throw new NotEnoughStockException("need more stock");
-        }
-        this.stockQuantity = restStock;
-    }
 }

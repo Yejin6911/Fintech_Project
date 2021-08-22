@@ -1,15 +1,12 @@
 package com.example.demo.domain.entity;
 
-import com.example.demo.domain.entity.cart.Cart;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-@Getter
+@Getter @Setter
 @Table(name = "member")
 public class MemberEntity {
     @Id
@@ -32,12 +29,9 @@ public class MemberEntity {
     @Column(length = 30, nullable = true)
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "member")
-    private List<Order> orders = new ArrayList<>();
+    @OneToOne(mappedBy = "member")
+    private Cart order = new Cart();
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cart_id")
-    private Cart cart;
 
     @Builder
     public MemberEntity(Long id, String name, String email, String password, String birthday, String phoneNumber) {

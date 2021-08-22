@@ -34,19 +34,29 @@ public class ItemController {
         return "items/itemDetails";
     }
 
-    @PostMapping("")
-
     @PostConstruct
     public void create() {
-
-//        MemberEntity member1 = new MemberEntity();
-//        member1.
+//
+//        MemberEntity member1 = new MemberEntity(
+//                1L,
+//                "fin1",
+//                "11@gg.com",
+//                "1234",
+//                "1234",
+//                "1234");
+//
+//        MemberEntity member2 = new MemberEntity(
+//                2L,
+//                "fin2",
+//                "22@gg.com",
+//                "1234",
+//                "1234",
+//                "1234");
 
 
         Item item = new Item();
         item.setName("test");
         item.setPrice(10000);
-        item.setStockQuantity(10);
         item.setLoanCount(3);
         item.setRating(ItemRating.FIVE);
         item.setDescription("테스트입니다.");
@@ -58,7 +68,6 @@ public class ItemController {
         Item item2 = new Item();
         item2.setName("test");
         item2.setPrice(20000);
-        item2.setStockQuantity(20);
         item2.setLoanCount(2);
         item2.setRating(ItemRating.FIVE);
         item2.setDescription("테스트입니다2.");
