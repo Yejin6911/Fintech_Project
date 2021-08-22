@@ -1,10 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.entity.Account;
 import com.example.demo.dto.AccountDto;
-import com.example.demo.repository.AccountRepository;
 import com.example.demo.service.AccountService;
-import com.example.demo.service.MemberService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

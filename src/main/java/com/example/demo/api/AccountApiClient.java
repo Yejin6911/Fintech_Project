@@ -32,7 +32,7 @@ public class AccountApiClient {
     private final String ReceivedTransferA = "ReceivedTransferA";
 
 
-    private final String AccessToken = "fbc2f45a85d5e47781183a7417f6c34d5c4c7bbba6f3ad6763ff024f9caf4f9c";
+    private final String AccessToken = "45d02fdd0348dfad616c87bbfdcc2c6476e26c07ac72037f746471dfa0773d4b";
     private final String NHApiUrl_finAccount = "https://developers.nonghyup.com/OpenFinAccountDirect.nh";
     private final String NHApiUrl_confirmAccount = "https://developers.nonghyup.com/CheckOpenFinAccountDirect.nh";
     private final String NHApiUrl_inquireBalance = "https://developers.nonghyup.com/InquireBalance.nhh";
@@ -45,7 +45,7 @@ public class AccountApiClient {
     private final String Tsymd = format1.format(today.getTime());
     private final String Trtm = format2.format(today.getTime());
 
-    private final String Iscd = "001063";
+    private final String Iscd = "001066";
     private final String FintechApsno = "001";
 
     public static String numberGen(int len, int dupCd ) {
