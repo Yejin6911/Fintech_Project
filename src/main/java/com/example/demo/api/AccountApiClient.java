@@ -25,6 +25,13 @@ public class AccountApiClient {
     private final String OpenFinAccountDirect = "OpenFinAccountDirect";
     private final String CheckOpenFinAccountDirect = "CheckOpenFinAccountDirect";
     private final String InquireBalance = "InquireBalance";
+    private final String DrawingTransfer = "DrawingTransfer";
+
+    private final String AccessToken = "fbc2f45a85d5e47781183a7417f6c34d5c4c7bbba6f3ad6763ff024f9caf4f9c";
+    private final String NHApiUrl_finAccount = "https://developers.nonghyup.com/OpenFinAccountDirect.nh";
+    private final String NHApiUrl_confirmAccount = "https://developers.nonghyup.com/CheckOpenFinAccountDirect.nh";
+    private final String NHApiUrl_inquireBalance = "https://developers.nonghyup.com/InquireBalance.nhh";
+    private final String NHApiUrl_drawingTransfer = "https://developers.nonghyup.com/DrawingTransfer.nh";
 
 
     SimpleDateFormat format1 = new SimpleDateFormat("yyyyMMdd");
@@ -59,10 +66,7 @@ public class AccountApiClient {
         }
         return numStr;
     }
-    private final String AccessToken = "fbc2f45a85d5e47781183a7417f6c34d5c4c7bbba6f3ad6763ff024f9caf4f9c";
-    private final String NHApiUrl_finAccount = "https://developers.nonghyup.com/OpenFinAccountDirect.nh";
-    private final String NHApiUrl_confirmAccount = "https://developers.nonghyup.com/CheckOpenFinAccountDirect.nh";
-    private final String NHApiUrl_inquireBalance = "https://developers.nonghyup.com/InquireBalance.nhh";
+
     //핀어카운트직접발급
     public String requestFinAccount(Map<String, String> param) {
 
@@ -163,5 +167,38 @@ public class AccountApiClient {
         String result = restTemplate.postForEntity(NHApiUrl_inquireBalance, entity, String.class).getBody();
         return result;
 
+    }
+
+    public String drawingTransfer(Map<String, String> param, String FinAcno) {
+        Map<String, String> header = new HashMap<>();
+        header.put("ApiNm", DrawingTransfer);
+        header.put("Tsymd", Tsymd);
+        header.put("Trtm", Trtm);
+        header.put("Iscd", Iscd);
+        header.put("FintechApsno", FintechApsno);
+        header.put("ApiSvcCd", ApiSvcCd);
+        header.put("IsTuno", numberGen(10,2));
+        header.put("AccessToken", AccessToken);
+
+        Map<String, Object> params = new HashMap<>();
+        params.put("Header", header);
+        params.put("FinAcno", FinAcno);
+        params.put("Tram", param.get("Tram"));
+        params.put("DractOtlt", "(주)놀아보새");
+
+        String body = null;
+        try {
+            body = objectMapper.writeValueAsString(params);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(body);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(new MediaType("application", "json", Charset.forName("UTF-8")));
+
+        HttpEntity entity = new HttpEntity(body, headers);
+        System.out.println(entity);
+        String result = restTemplate.postForEntity(NHApiUrl_drawingTransfer, entity, String.class).getBody();
+        return result;
     }
 }

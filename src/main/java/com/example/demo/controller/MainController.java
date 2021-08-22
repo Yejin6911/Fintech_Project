@@ -16,4 +16,9 @@ public class MainController {
     public String bank(){
         return "account/account.html";
     }
+
+    @GetMapping("/order")
+    public String order(){
+        return "account/order.html";
+    }
 }

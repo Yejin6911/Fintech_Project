@@ -27,4 +27,9 @@ public class AccountController {
     public String inquireBalance(@RequestBody Map<String, String> param) {
         return accountService.inquire(param);
     }
+
+    @PostMapping("/api/account/order")
+    public String DrawingTransfer(@RequestBody Map<String, String> param) {
+        return accountService.order(param);
+    }
 }
