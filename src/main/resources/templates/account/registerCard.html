@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -228,7 +228,7 @@
         <!-- <a href='checkcard.html' target='myi'><button>체크카드</button></a>
         <a href='account.html' target='myi'><button>계좌</button></a> -->
         <a><button style="color: rgb(29, 172, 167); border-color: rgb(29, 172, 167);">체크카드</button></a>
-        <a th:href='@{/user/register/account}' target='myi'><button>계좌</button></a>
+        <a href="/user/register/account" target='myi'><button>계좌</button></a>
     </table>
 
     <!-- <iframe name='myi' width='300' height="280" frameborder='0'> -->
